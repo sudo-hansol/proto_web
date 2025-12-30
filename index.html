@@ -1,58 +1,287 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AM-AI Hub | Resource Library</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://unpkg.com/lucide@latest"></script>
-</head>
-<body>
+// Expanded database with all modules from the curriculum
+const database = [
+    // ================= SEMESTER 1 =================
+    {
+        name: "Analysis I",
+        sem: "s1",
+        type: "course",
+        modtype: "fundamental",
+        link: "#",
+        code: "MATH101",
+        size: "4.2 MB",
+        uploaded: "2023-09-15"
+    },
+    // ... (keep all your existing database entries)
+    // Add TD and exam examples
+    {
+        name: "Analysis I - TD Series 1",
+        sem: "s1",
+        type: "td",
+        modtype: "fundamental",
+        link: "#",
+        code: "MATH101-TD1",
+        size: "1.2 MB",
+        uploaded: "2023-09-20"
+    },
+    {
+        name: "Analysis I - Midterm Exam",
+        sem: "s1",
+        type: "exam",
+        modtype: "fundamental",
+        link: "#",
+        code: "MATH101-EX1",
+        size: "0.8 MB",
+        uploaded: "2023-10-10"
+    }
+    // ... (add more TDs and exams as needed)
+];
 
-    <nav>
-        <div class="logo">AM<span>AI</span>DS Hub</div>
-        <div class="nav-links">
-            <a href="https://t.me/your_bot">Telegram Bot</a>
-        </div>
-    </nav>
+// Current filters state
+let currentFilters = { sem: 'all', type: 'all', modtype: 'all' };
+let currentView = 'grid';
 
-    <header class="hero">
-        <div class="hero-content">
-            <h1>Applied Math & AI Library</h1>
-            <p>Access all your course materials, TDs, and exams in one place.</p>
+// 1. Render Cards Function (Fixed)
+function renderCards(data) {
+    const container = document.getElementById('resource-container');
+    const noResults = document.getElementById('no-results');
+    
+    if (!container) return;
+    
+    container.innerHTML = '';
+    
+    if (data.length === 0) {
+        if (noResults) noResults.style.display = 'block';
+        container.innerHTML = '';
+    } else {
+        if (noResults) noResults.style.display = 'none';
+        
+        data.forEach(item => {
+            const card = document.createElement('div');
+            card.className = currentView === 'grid' ? 'resource-card' : 'resource-card list-view';
             
-            <div class="search-box">
-                <i data-lucide="search"></i>
-                <input type="text" id="search-input" placeholder="Search by module name (e.g., Algebra, Analysis)..." oninput="runFilter()">
-            </div>
-        </div>
-    </header>
+            // Format uploaded date
+            const uploadedDate = new Date(item.uploaded);
+            const formattedDate = uploadedDate.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric'
+            });
+            
+            // Type icon mapping
+            const typeIcons = {
+                'course': 'fas fa-book',
+                'td': 'fas fa-file-alt',
+                'exam': 'fas fa-file-pdf'
+            };
+            
+            // Module type colors mapping
+            const modtypeColors = {
+                'fundamental': 'primary',
+                'methodological': 'purple',
+                'discovery': 'orange',
+                'transversal': 'green'
+            };
+            
+            card.innerHTML = `
+                <div class="card-header">
+                    <div style="display: flex; justify-content: space-between; align-items: start;">
+                        <div>
+                            <span class="badge ${item.sem}">${item.sem.toUpperCase()}</span>
+                            <span class="resource-type ${item.type}">${item.type.toUpperCase()}</span>
+                        </div>
+                        <span class="module-type ${item.modtype}">${item.modtype}</span>
+                    </div>
+                    <h3>${item.name}</h3>
+                    <p class="semester"><i class="fas fa-hashtag"></i> ${item.code}</p>
+                </div>
+                <div class="card-body">
+                    <div class="meta-info">
+                        <div class="meta-item">
+                            <i class="fas fa-database"></i>
+                            <span>${item.size}</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-calendar"></i>
+                            <span>${formattedDate}</span>
+                        </div>
+                    </div>
+                    <p>Module type: <strong>${item.modtype}</strong></p>
+                </div>
+                <div class="card-footer">
+                    <a href="${item.link}" class="download-btn" target="_blank">
+                        <i class="${typeIcons[item.type] || 'fas fa-download'}"></i>
+                        ${item.type === 'exam' ? 'View Exam' : 'Download'}
+                    </a>
+                </div>
+            `;
+            container.appendChild(card);
+        });
+    }
+    
+    // Update stats
+    updateStats(data);
+}
 
-    <section class="controls">
-        <div class="filter-group">
-            <label><i data-lucide="calendar"></i> Semester</label>
-            <select id="sem-filter" onchange="runFilter()">
-                <option value="all">All Semesters</option>
-                <option value="s1">Semester 1</option>
-                <option value="s2">Semester 2</option>
-            </select>
-        </div>
+// 2. Filter Logic
+function setFilter(type, value) {
+    // Update active class for buttons
+    const buttons = document.querySelectorAll(`button[onclick*="${type}"]`);
+    buttons.forEach(btn => {
+        btn.classList.remove('active');
+    });
+    
+    // Find and activate the clicked button
+    const clickedButton = event.target;
+    clickedButton.classList.add('active');
+    
+    // Update filter state
+    currentFilters[type] = value;
+    runFilter();
+}
 
-        <div class="filter-group">
-            <label><i data-lucide="file-text"></i> Type</label>
-            <select id="type-filter" onchange="runFilter()">
-                <option value="all">All Resources</option>
-                <option value="course">Course PDF</option>
-                <option value="td">TD / Series</option>
-                <option value="exam">Past Exams</option>
-            </select>
-        </div>
-    </section>
+function runFilter() {
+    const searchInput = document.getElementById('search-input');
+    const search = searchInput ? searchInput.value.toLowerCase() : '';
+    
+    const filtered = database.filter(item => {
+        const matchSearch = item.name.toLowerCase().includes(search) || 
+                          item.code.toLowerCase().includes(search);
+        const matchSem = currentFilters.sem === "all" || item.sem === currentFilters.sem;
+        const matchType = currentFilters.type === "all" || item.type === currentFilters.type;
+        const matchModType = currentFilters.modtype === "all" || item.modtype === currentFilters.modtype;
+        
+        return matchSearch && matchSem && matchType && matchModType;
+    });
+    
+    renderCards(filtered);
+}
 
-    <main id="resource-grid" class="resource-grid">
-        </main>
+// 3. Stats Logic
+function updateStats(data) {
+    const totalEl = document.getElementById('total-resources');
+    const courseEl = document.getElementById('course-count');
+    const tdEl = document.getElementById('td-count');
+    const examEl = document.getElementById('exam-count');
+    
+    if(totalEl) totalEl.textContent = data.length;
+    
+    if(courseEl) {
+        const courseCount = data.filter(item => item.type === 'course').length;
+        courseEl.textContent = courseCount;
+    }
+    
+    if(tdEl) {
+        const tdCount = data.filter(item => item.type === 'td').length;
+        tdEl.textContent = tdCount;
+    }
+    
+    if(examEl) {
+        const examCount = data.filter(item => item.type === 'exam').length;
+        examEl.textContent = examCount;
+    }
+}
 
-    <script src="script.js"></script>
-    <script>lucide.createIcons();</script>
-</body>
-</html>
+// 4. View Toggle
+function setView(view) {
+    currentView = view;
+    const container = document.getElementById('resource-container');
+    const viewBtns = document.querySelectorAll('.view-btn');
+    
+    // Update active button
+    viewBtns.forEach(btn => {
+        btn.classList.remove('active');
+    });
+    event.target.classList.add('active');
+    
+    // Update container class
+    if (container) {
+        container.className = view === 'grid' ? 'resource-grid' : 'resource-list';
+    }
+    
+    // Re-render cards with new view
+    const searchInput = document.getElementById('search-input');
+    const search = searchInput ? searchInput.value.toLowerCase() : '';
+    
+    const filtered = database.filter(item => {
+        const matchSearch = item.name.toLowerCase().includes(search) || 
+                          item.code.toLowerCase().includes(search);
+        const matchSem = currentFilters.sem === "all" || item.sem === currentFilters.sem;
+        const matchType = currentFilters.type === "all" || item.type === currentFilters.type;
+        const matchModType = currentFilters.modtype === "all" || item.modtype === currentFilters.modtype;
+        
+        return matchSearch && matchSem && matchType && matchModType;
+    });
+    
+    renderCards(filtered);
+}
+
+// 5. Semester Tab Logic
+function openSemester(semesterId) {
+    // Hide all semester contents
+    const contents = document.querySelectorAll(".semester-content");
+    contents.forEach(content => {
+        content.classList.remove("active");
+    });
+    
+    // Remove active class from all tabs
+    const tabs = document.querySelectorAll(".semester-tab");
+    tabs.forEach(tab => {
+        tab.classList.remove("active");
+    });
+    
+    // Show selected semester content
+    const selected = document.getElementById(semesterId);
+    if(selected) {
+        selected.classList.add("active");
+    }
+    
+    // Add active class to clicked button
+    event.currentTarget.classList.add("active");
+}
+
+// 6. Initialize Page
+document.addEventListener('DOMContentLoaded', function() {
+    // Mobile Menu Toggle
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    
+    if(hamburger && navLinks) {
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = hamburger.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+    }
+
+    // Search functionality
+    const searchInput = document.getElementById('search-input');
+    if(searchInput) {
+        searchInput.addEventListener('input', runFilter);
+    }
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (event) => {
+        if (navLinks && navLinks.classList.contains('active') && 
+            !event.target.closest('.nav-links') && 
+            !event.target.closest('#hamburger')) {
+            navLinks.classList.remove('active');
+            const icon = hamburger.querySelector('i');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        }
+    });
+
+    // Initial render
+    runFilter();
+    
+    // Initialize Lucide icons if available
+    if (window.lucide) {
+        lucide.createIcons();
+    }
+});
