@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AM-AI Hub | Resource Library</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">AM<span>AI</span>DS Hub</div>
+        <div class="nav-links">
+            <a href="https://t.me/your_bot">Telegram Bot</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Applied Math & AI Library</h1>
+            <p>Access all your course materials, TDs, and exams in one place.</p>
+            
+            <div class="search-box">
+                <i data-lucide="search"></i>
+                <input type="text" id="search-input" placeholder="Search by module name (e.g., Algebra, Analysis)..." oninput="runFilter()">
+            </div>
+        </div>
+    </header>
+
+    <section class="controls">
+        <div class="filter-group">
+            <label><i data-lucide="calendar"></i> Semester</label>
+            <select id="sem-filter" onchange="runFilter()">
+                <option value="all">All Semesters</option>
+                <option value="s1">Semester 1</option>
+                <option value="s2">Semester 2</option>
+            </select>
+        </div>
+
+        <div class="filter-group">
+            <label><i data-lucide="file-text"></i> Type</label>
+            <select id="type-filter" onchange="runFilter()">
+                <option value="all">All Resources</option>
+                <option value="course">Course PDF</option>
+                <option value="td">TD / Series</option>
+                <option value="exam">Past Exams</option>
+            </select>
+        </div>
+    </section>
+
+    <main id="resource-grid" class="resource-grid">
+        </main>
+
+    <script src="script.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

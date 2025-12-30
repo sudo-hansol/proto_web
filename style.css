@@ -1,0 +1,71 @@
+:root {
+    --bg: #0f172a;
+    --card: #1e293b;
+    --accent: #38bdf8;
+    --text: #f1f5f9;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    /* Geometric Math Grid */
+    background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 0);
+    background-size: 30px 30px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 8%;
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(10px);
+    position: sticky; top: 0; z-index: 100;
+}
+
+.logo { font-size: 1.5rem; font-weight: bold; }
+.logo span { color: var(--accent); }
+
+.hero { text-align: center; padding: 80px 20px; }
+.search-box {
+    position: relative; max-width: 600px; margin: 30px auto;
+}
+.search-box input {
+    width: 100%; padding: 15px 15px 15px 50px;
+    border-radius: 12px; border: 1px solid #334155;
+    background: var(--card); color: white; outline: none;
+}
+.search-box i { position: absolute; left: 15px; top: 15px; color: var(--accent); }
+
+.controls {
+    display: flex; justify-content: center; gap: 20px;
+    padding-bottom: 40px; flex-wrap: wrap;
+}
+
+.filter-group select {
+    background: var(--card); color: white; padding: 10px;
+    border-radius: 8px; border: 1px solid #334155;
+}
+
+.resource-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px; padding: 0 8% 50px 8%;
+}
+
+.card {
+    background: var(--card); border: 1px solid #334155;
+    border-radius: 15px; padding: 20px; transition: 0.3s;
+}
+.card:hover { border-color: var(--accent); transform: translateY(-5px); }
+
+.badge {
+    background: rgba(56, 189, 248, 0.1); color: var(--accent);
+    padding: 5px 10px; border-radius: 5px; font-size: 0.8rem;
+}
+
+.btn {
+    display: block; text-align: center; background: var(--accent);
+    color: var(--bg); text-decoration: none; padding: 10px;
+    border-radius: 8px; margin-top: 15px; font-weight: bold;
+}
