@@ -1,5 +1,3 @@
-[file name]: index.html
-[file content begin]
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +12,7 @@
             <div class="logo-icon">AI</div>
             <div>
                 <h1>AMAIDS Hub</h1>
-                <div class="subtitle">Applied Mathematics & AI for Data Science</div>
+                <div class="subtitle">Applied Mathematics for AI & Data Science</div>
             </div>
         </div>
         <nav>
@@ -32,50 +30,42 @@
         <p>This platform provides educational resources for the <strong>Applied Mathematics for Artificial Intelligence and Data Science</strong> program at University of Kasdi Merbah Ouargla. Browse resources by semester, subject, or type.</p>
     </section>
     
-   <section id="filters" class="card">
+  <section id="filters" class="card">
     <h3>Filter Resources</h3>
     <div class="filter-group">
         <div>
             <label class="filter-label">Semester</label>
             <select id="filter-semester" class="filter-control">
-                <option value="all">All Semesters</option>
-                <option value="1">Semester 1</option>
-                <option value="2">Semester 2</option>
-                <option value="3">Semester 3</option>
-                <option value="4">Semester 4</option>
-                <option value="5">Semester 5</option>
-                <option value="6">Semester 6</option>
-            </select>
+                <option value="all">Select Semester...</option>
+                </select>
         </div>
+
         <div>
             <label class="filter-label">Subject</label>
-            <select id="filter-subject" class="filter-control">
+            <select id="filter-subject" class="filter-control" disabled>
                 <option value="all">All Subjects</option>
             </select>
         </div>
+
         <div>
             <label class="filter-label">Type</label>
-            <select id="filter-type" class="filter-control">
+            <select id="filter-type" class="filter-control" disabled>
                 <option value="all">All Types</option>
-                <option value="Lecture">Lecture</option>
-                <option value="TD/Series">TD/Series</option>
-                <option value="Exam">Exam</option>
-                <option value="TP">Practical Work</option>
-                <option value="Project">Project</option>
             </select>
         </div>
     </div>
+
     <div class="search-container">
         <div class="search-icon">🔍</div>
-        <input type="text" id="search-input" class="filter-control" placeholder="Search resources by title or subject...">
+        <input type="text" id="search-input" class="filter-control" placeholder="Search resources by title...">
     </div>
 </section>
 
     <div class="resource-grid" id="resource-grid">
-        <!-- Resource cards will be dynamically added here -->
         <div class="loading-message">Loading resources...</div>
     </div>
 </main>
+
 <footer>
     <div class="footer-container">
         <div class="footer-section">
@@ -102,10 +92,8 @@
     </div>
 </footer>
 
-<!-- Load scripts in correct order -->
 <script src="scripts/dataHandler.js"></script>
 <script src="scripts/filters.js"></script>
 <script src="scripts/app.js"></script>
 </body>
 </html>
-[file content end]
