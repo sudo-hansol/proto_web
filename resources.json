@@ -6,7 +6,7 @@
         "subject": "Analysis I",
         "type": "Lecture",
         "title": "Analysis I - Lecture",
-        "drive_link": "#"
+        "drive_link": "https://drive.google.com/drive/folders/1rn5m0QkH9bab4E2VD50iz6wL1zBEDcLg"
     },
     {
         "id": "sem1-analysis1-td",
@@ -14,7 +14,7 @@
         "subject": "Analysis I",
         "type": "TD",
         "title": "Analysis I - Tutorials",
-        "drive_link": "#"
+        "drive_link": "https://drive.google.com/drive/folders/1uCT4SWp5xJUWe9geMKoverFgwmqve_pw"
     },
     {
         "id": "sem1-analysis1-exam",
@@ -22,7 +22,7 @@
         "subject": "Analysis I",
         "type": "Exam",
         "title": "Analysis I - Exam",
-        "drive_link": "#"
+        "drive_link": "https://drive.google.com/drive/folders/1k7V1firvLC3mowuWPdxJcn5dTUNg__wD"
     },
     {
         "id": "sem1-algebra1-lec",
@@ -30,7 +30,7 @@
         "subject": "Algebra I",
         "type": "Lecture",
         "title": "Algebra I - Lecture",
-        "drive_link": "#"
+        "drive_link": "https://drive.google.com/drive/folders/1A2XAxUbvNLe7yMvfRHy2AEOhaKAPmz38"
     },
     {
         "id": "sem1-algebra1-td",
@@ -38,7 +38,7 @@
         "subject": "Algebra I",
         "type": "TD",
         "title": "Algebra I - Tutorials",
-        "drive_link": "#"
+        "drive_link": "https://drive.google.com/drive/folders/1SBD-7PwBF25SdcJLnMrfosabiNt0gbSI"
     },
     {
         "id": "sem1-algebra1-exam",
@@ -46,7 +46,7 @@
         "subject": "Algebra I",
         "type": "Exam",
         "title": "Algebra I - Exam",
-        "drive_link": "#"
+        "drive_link": "https://drive.google.com/drive/folders/1g8wgV5Qw_ztaQOssmt5M-_8aEwzMgfIm"
     },
     {
         "id": "sem1-algo1-lec",
@@ -54,7 +54,7 @@
         "subject": "Algorithms and Data Structures 1",
         "type": "Lecture",
         "title": "ADS 1 - Lecture",
-        "drive_link": "#"
+        "drive_link": "https://drive.google.com/drive/folders/1zxs-Qmd5xHe4DDCNIiqxrzLjjarV-2gd"
     },
     {
         "id": "sem1-algo1-td",
@@ -62,7 +62,7 @@
         "subject": "Algorithms and Data Structures 1",
         "type": "TD",
         "title": "ADS 1 - Tutorials",
-        "drive_link": "#"
+        "drive_link": "https://drive.google.com/drive/folders/1zxs-Qmd5xHe4DDCNIiqxrzLjjarV-2gd"
     },
     {
         "id": "sem1-algo1-tp",
@@ -70,7 +70,7 @@
         "subject": "Algorithms and Data Structures 1",
         "type": "TP",
         "title": "ADS 1 - Lab",
-        "drive_link": "#"
+        "drive_link": "https://drive.google.com/drive/folders/1zxs-Qmd5xHe4DDCNIiqxrzLjjarV-2gd"
     },
     {
         "id": "sem1-algo1-exam",
@@ -78,7 +78,7 @@
         "subject": "Algorithms and Data Structures 1",
         "type": "Exam",
         "title": "ADS 1 - Exam",
-        "drive_link": "#"
+        "drive_link": "https://drive.google.com/drive/folders/1zxs-Qmd5xHe4DDCNIiqxrzLjjarV-2gd"
     },
     {
         "id": "sem1-discrete-lec",
@@ -86,15 +86,15 @@
         "subject": "Discrete Mathematics",
         "type": "Lecture",
         "title": "Discrete Mathematics - Lecture",
-        "drive_link": "#"
+        "drive_link": "https://drive.google.com/drive/folders/1a-bjMG1Q12hZeAKAuTwKKL3kTUQ3sH-P"
     },
     {
         "id": "sem1-discrete-tp",
         "semester": 1,
         "subject": "Discrete Mathematics",
-        "type": "TP",
-        "title": "Discrete Mathematics - Lab",
-        "drive_link": "#"
+        "type": "TD",
+        "title": "Discrete Mathematics - Tutorials",
+        "drive_link": "https://drive.google.com/drive/folders/1unsWyb2bmK5mWBFkmtfUP4Xq6Su2KvCS"
     },
     {
         "id": "sem1-discrete-exam",
@@ -102,7 +102,7 @@
         "subject": "Discrete Mathematics",
         "type": "Exam",
         "title": "Discrete Mathematics - Exam",
-        "drive_link": "#"
+        "drive_link": "https://drive.google.com/drive/folders/1jXSNVXXtKZB0h8fSpCJc1_3g8ZZc-bKW"
     },
     {
         "id": "sem1-foss-lec",
@@ -174,7 +174,7 @@
         "subject": "Analysis II",
         "type": "Lecture",
         "title": "Analysis II - Lecture",
-        "drive_link": "#"
+        "drive_link": "https://drive.google.com/drive/folders/1PRBtv45Zr0_kQkPnwwjqtaTtWC5K5lZX"
     },
     {
         "id": "sem2-analysis2-td",
@@ -182,7 +182,7 @@
         "subject": "Analysis II",
         "type": "TD",
         "title": "Analysis II - Tutorials",
-        "drive_link": "#"
+        "drive_link": "https://drive.google.com/drive/folders/1yOvY9uzAUdjDDMdDG88PUMy2oXjFFtOP"
     },
     {
         "id": "sem2-analysis2-exam",
@@ -190,7 +190,7 @@
         "subject": "Analysis II",
         "type": "Exam",
         "title": "Analysis II - Exam",
-        "drive_link": "#"
+        "drive_link": "https://drive.google.com/drive/folders/192iYuH4GKFPWlJJNRMSB0KxpC9mcwcs0"
     },
     {
         "id": "sem2-algebra2-lec",
@@ -198,7 +198,7 @@
         "subject": "Algebra II",
         "type": "Lecture",
         "title": "Algebra II - Lecture",
-        "drive_link": "#"
+        "drive_link": "https://drive.google.com/drive/folders/1sTyAcquaW7RfgI6a8tPJWP1QSPGqZbbL"
     },
     {
         "id": "sem2-algebra2-td",
@@ -206,7 +206,7 @@
         "subject": "Algebra II",
         "type": "TD",
         "title": "Algebra II - Tutorials",
-        "drive_link": "#"
+        "drive_link": "https://drive.google.com/drive/folders/1PN9qGaGc4u6nZpU_BDPr-ExaDxj0OSj8"
     },
     {
         "id": "sem2-algebra2-exam",
@@ -214,7 +214,7 @@
         "subject": "Algebra II",
         "type": "Exam",
         "title": "Algebra II - Exam",
-        "drive_link": "#"
+        "drive_link": "https://drive.google.com/drive/folders/19awwYv0ZS6JwTPFhAGOeg0vXocgm3U9f"
     },
     {
         "id": "sem2-algo2-lec",
@@ -222,7 +222,7 @@
         "subject": "Algorithms and Data Structures 2",
         "type": "Lecture",
         "title": "ADS 2 - Lecture",
-        "drive_link": "#"
+        "drive_link": "https://drive.google.com/drive/folders/1Aava6fnbvbHN0UU3qp5v6-Y0l93GqNCU"
     },
     {
         "id": "sem2-algo2-td",
@@ -230,7 +230,7 @@
         "subject": "Algorithms and Data Structures 2",
         "type": "TD",
         "title": "ADS 2 - Tutorials",
-        "drive_link": "#"
+        "drive_link": "https://drive.google.com/drive/folders/1IGP8mxcqLmLijKkQdSL-90eSGY3W8LmU"
     },
     {
         "id": "sem2-algo2-tp",
@@ -238,7 +238,7 @@
         "subject": "Algorithms and Data Structures 2",
         "type": "TP",
         "title": "ADS 2 - Lab",
-        "drive_link": "#"
+        "drive_link": "https://drive.google.com/drive/folders/1YGWoE5UoJ8nQRE85aisfjI6pAVn0Q1JJ"
     },
     {
         "id": "sem2-algo2-exam",
@@ -246,7 +246,7 @@
         "subject": "Algorithms and Data Structures 2",
         "type": "Exam",
         "title": "ADS 2 - Exam",
-        "drive_link": "#"
+        "drive_link": ""
     },
     {
         "id": "sem2-probstat-lec",
@@ -254,7 +254,7 @@
         "subject": "Probability and Descriptive Statistics",
         "type": "Lecture",
         "title": "Probability & Statistics - Lecture",
-        "drive_link": "#"
+        "drive_link": "https://drive.google.com/drive/folders/1lVCAYEdsBPFcqJ8n2n8Ix3wUc2KLawCh"
     },
     {
         "id": "sem2-probstat-td",
@@ -262,7 +262,7 @@
         "subject": "Probability and Descriptive Statistics",
         "type": "TD",
         "title": "Probability & Statistics - Tutorials",
-        "drive_link": "#"
+        "drive_link": "https://drive.google.com/drive/folders/1OzveS9HKnKODsHyZDeBhdEwZv1_tCLUe"
     },
     {
         "id": "sem2-probstat-exam",
@@ -270,7 +270,7 @@
         "subject": "Probability and Descriptive Statistics",
         "type": "Exam",
         "title": "Probability & Statistics - Exam",
-        "drive_link": "#"
+        "drive_link": "https://drive.google.com/drive/folders/1QhHjE8OcWtCND2SzeDW4QA1RHQahDqu4"
     },
     {
         "id": "sem2-ai-lec",
@@ -342,7 +342,7 @@
         "subject": "Analysis III",
         "type": "Lecture",
         "title": "Analysis III - Lecture",
-        "drive_link": "#"
+        "drive_link": "https://drive.google.com/drive/folders/1XBCy0mDP_vnFqijZJozSvoFgVmJU6sMh"
     },
     {
         "id": "sem3-analysis3-td",
@@ -350,7 +350,7 @@
         "subject": "Analysis III",
         "type": "TD",
         "title": "Analysis III - Tutorials",
-        "drive_link": "#"
+        "drive_link": "https://drive.google.com/drive/u/1/folders/11-HdkH1HFOFg4Ub8hVVhz_bpxEVIaUZd"
     },
     {
         "id": "sem3-analysis3-exam",
@@ -358,7 +358,7 @@
         "subject": "Analysis III",
         "type": "Exam",
         "title": "Analysis III - Exam",
-        "drive_link": "#"
+        "drive_link": "https://drive.google.com/drive/u/1/folders/13fLEnoiMo_U9PhaTMI-G3nwq7sKz493S"
     },
     {
         "id": "sem3-algebra3-lec",
@@ -366,7 +366,7 @@
         "subject": "Algebra III",
         "type": "Lecture",
         "title": "Algebra III - Lecture",
-        "drive_link": "#"
+        "drive_link": "https://drive.google.com/drive/folders/17L_HISoIMmXLf9n_CAXjVEnZ_p8DMQA9"
     },
     {
         "id": "sem3-algebra3-td",
@@ -374,7 +374,7 @@
         "subject": "Algebra III",
         "type": "TD",
         "title": "Algebra III - Tutorials",
-        "drive_link": "#"
+        "drive_link": "https://drive.google.com/drive/folders/1VruApy2Sq4tirK4gbP05xCkkgks36_j6"
     },
     {
         "id": "sem3-algebra3-exam",
@@ -382,7 +382,7 @@
         "subject": "Algebra III",
         "type": "Exam",
         "title": "Algebra III - Exam",
-        "drive_link": "#"
+        "drive_link": "https://drive.google.com/drive/folders/1AbdjtQiVgiDFi1lpEx0yTPwJBnBns6uv"
     },
     {
         "id": "sem3-topology-lec",
@@ -390,7 +390,7 @@
         "subject": "Introduction to Topology",
         "type": "Lecture",
         "title": "Topology - Lecture",
-        "drive_link": "#"
+        "drive_link": "https://drive.google.com/drive/folders/1hcZ8URO5P8DyYN4-Y6VssuQUC07c1H6K"
     },
     {
         "id": "sem3-topology-td",
@@ -398,7 +398,7 @@
         "subject": "Introduction to Topology",
         "type": "TD",
         "title": "Topology - Tutorials",
-        "drive_link": "#"
+        "drive_link": "https://drive.google.com/drive/folders/1S8DExB0Um7MqvUtOAx3dBGHV_9IU85o6"
     },
     {
         "id": "sem3-topology-exam",
@@ -406,7 +406,7 @@
         "subject": "Introduction to Topology",
         "type": "Exam",
         "title": "Topology - Exam",
-        "drive_link": "#"
+        "drive_link": "https://drive.google.com/drive/u/1/folders/16AHapt2_kSedzLHsRPTkQfG4O3vx3xqf"
     },
     {
         "id": "sem3-numerical-lec",
@@ -414,7 +414,7 @@
         "subject": "Numerical Analysis",
         "type": "Lecture",
         "title": "Numerical Analysis - Lecture",
-        "drive_link": "#"
+        "drive_link": "https://drive.google.com/drive/folders/1GD_UUMucSZ61UCJo07MoJ89Tq3CXaFBA"
     },
     {
         "id": "sem3-numerical-td",
@@ -422,7 +422,7 @@
         "subject": "Numerical Analysis",
         "type": "TD",
         "title": "Numerical Analysis - Tutorials",
-        "drive_link": "#"
+        "drive_link": "https://drive.google.com/drive/folders/1_MjlObTI0tA4Zf4BBHW2A8HJzkQ-i1QE"
     },
     {
         "id": "sem3-numerical-tp",
@@ -438,7 +438,7 @@
         "subject": "Numerical Analysis",
         "type": "Exam",
         "title": "Numerical Analysis - Exam",
-        "drive_link": "#"
+        "drive_link": "https://drive.google.com/drive/folders/15_OSknC_JddNz9i-UUVk_Zu3ZCQhL0Jd"
     },
     {
         "id": "sem3-ml1-lec",
@@ -518,7 +518,7 @@
         "subject": "Measure and Integration",
         "type": "Lecture",
         "title": "Measure and Integration - Lecture",
-        "drive_link": "#"
+        "drive_link": "https://drive.google.com/drive/u/1/folders/1uO1BQymeWkso7kxkTsHzRJD1s2u3Smg_"
     },
     {
         "id": "sem4-measure-td",
@@ -526,7 +526,7 @@
         "subject": "Measure and Integration",
         "type": "TD",
         "title": "Measure and Integration - Tutorials",
-        "drive_link": "#"
+        "drive_link": "https://drive.google.com/drive/u/1/folders/1sMk4ECO6XhMOBsVixi67LHRTIVxBuzzN"
     },
     {
         "id": "sem4-measure-exam",
@@ -534,7 +534,7 @@
         "subject": "Measure and Integration",
         "type": "Exam",
         "title": "Measure and Integration - Exam",
-        "drive_link": "#"
+        "drive_link": "https://drive.google.com/drive/u/1/folders/1dvnufGUbRw_i5oIqJl_sW26gN1se7sAw"
     },
     {
         "id": "sem4-normed-lec",
@@ -622,7 +622,7 @@
         "subject": "Geometry",
         "type": "Lecture",
         "title": "Geometry - Lecture",
-        "drive_link": "#"
+        "drive_link": "https://drive.google.com/drive/folders/1SnSDcYglYxau35myMozAwb-B33ozudj6"
     },
     {
         "id": "sem4-geometry-td",
@@ -630,7 +630,7 @@
         "subject": "Geometry",
         "type": "TD",
         "title": "Geometry - Tutorials",
-        "drive_link": "#"
+        "drive_link": "https://drive.google.com/drive/folders/1UzRIJqa887t4XwMpziuaMP03fb6iJvzm"
     },
     {
         "id": "sem4-geometry-exam",
@@ -638,7 +638,7 @@
         "subject": "Geometry",
         "type": "Exam",
         "title": "Geometry - Exam",
-        "drive_link": "#"
+        "drive_link": "https://drive.google.com/drive/folders/1UwI6gymLTSuYJD-e5Y6pihXeoBvH39Rf"
     },
     {
         "id": "sem4-introml-lec",
@@ -686,7 +686,7 @@
         "subject": "Introduction to Functional Analysis",
         "type": "Lecture",
         "title": "Functional Analysis - Lecture",
-        "drive_link": "#"
+        "drive_link": "https://drive.google.com/drive/folders/1NO30Pc8N0NUyo0pr-ugqmpQGkwoqFfE0"
     },
     {
         "id": "sem5-functional-td",
@@ -694,7 +694,7 @@
         "subject": "Introduction to Functional Analysis",
         "type": "TD",
         "title": "Functional Analysis - Tutorials",
-        "drive_link": "#"
+        "drive_link": "https://drive.google.com/drive/folders/1NDus_F8-k3f_8ypbqFg2p6US_Mo4fqge"
     },
     {
         "id": "sem5-functional-exam",
@@ -702,7 +702,7 @@
         "subject": "Introduction to Functional Analysis",
         "type": "Exam",
         "title": "Functional Analysis - Exam",
-        "drive_link": "#"
+        "drive_link": "https://drive.google.com/drive/folders/1aX9yXL1sOIdxuSoY93cKC9IP_JowXl9V"
     },
     {
         "id": "sem5-diffgeo-lec",
@@ -710,7 +710,7 @@
         "subject": "Differential Geometry",
         "type": "Lecture",
         "title": "Differential Geometry - Lecture",
-        "drive_link": "#"
+        "drive_link": "https://drive.google.com/drive/folders/1yQ8GZ1swj1Kmqn3XGI96vjYQfsvJ9rvQ"
     },
     {
         "id": "sem5-diffgeo-td",
@@ -718,7 +718,7 @@
         "subject": "Differential Geometry",
         "type": "TD",
         "title": "Differential Geometry - Tutorials",
-        "drive_link": "#"
+        "drive_link": "https://drive.google.com/drive/folders/1xXD4y8WHH0xyrUo3-Hz3YrpYQit3bThH"
     },
     {
         "id": "sem5-diffgeo-exam",
@@ -726,7 +726,7 @@
         "subject": "Differential Geometry",
         "type": "Exam",
         "title": "Differential Geometry - Exam",
-        "drive_link": "#"
+        "drive_link": "https://drive.google.com/drive/folders/1exgscuX-v5fkNY_O3RKKar_e-rptxEFO"
     },
     {
         "id": "sem5-inferstats-lec",
@@ -734,7 +734,7 @@
         "subject": "Inferential Statistics",
         "type": "Lecture",
         "title": "Inferential Statistics - Lecture",
-        "drive_link": "#"
+        "drive_link": "https://drive.google.com/drive/u/1/folders/1-mNSPeYiVVx_8gUDilwmAnAARyJVpCWQ"
     },
     {
         "id": "sem5-inferstats-td",
@@ -742,7 +742,7 @@
         "subject": "Inferential Statistics",
         "type": "TD",
         "title": "Inferential Statistics - Tutorials",
-        "drive_link": "#"
+        "drive_link": "https://drive.google.com/drive/folders/1u4qL8LPSYtQS7Iz7LfnFTCyjPAYw3opC"
     },
     {
         "id": "sem5-inferstats-exam",
@@ -750,7 +750,7 @@
         "subject": "Inferential Statistics",
         "type": "Exam",
         "title": "Inferential Statistics - Exam",
-        "drive_link": "#"
+        "drive_link": "https://drive.google.com/drive/folders/1znFDySPTgwcFB_46SFv_wdse2meJNo1X"
     },
     {
         "id": "sem5-complex-lec",
@@ -758,7 +758,7 @@
         "subject": "Complex Analysis",
         "type": "Lecture",
         "title": "Complex Analysis - Lecture",
-        "drive_link": "#"
+        "drive_link": "https://drive.google.com/drive/folders/1vpMOxV5tjT8rG0XugADGXsjDpCTh9Spx"
     },
     {
         "id": "sem5-complex-td",
@@ -766,7 +766,7 @@
         "subject": "Complex Analysis",
         "type": "TD",
         "title": "Complex Analysis - Tutorials",
-        "drive_link": "#"
+        "drive_link": "https://drive.google.com/drive/folders/1i9kpDOVmR1aAK2xjktt9fOPvf0LWJo8C"
     },
     {
         "id": "sem5-complex-exam",
@@ -774,7 +774,7 @@
         "subject": "Complex Analysis",
         "type": "Exam",
         "title": "Complex Analysis - Exam",
-        "drive_link": "#"
+        "drive_link": "https://drive.google.com/drive/folders/1-pfaaP0YRUcB4p27LjfhLny3olXxeyVU"
     },
     {
         "id": "sem5-pde-lec",
@@ -782,7 +782,7 @@
         "subject": "Partial Differential Equations",
         "type": "Lecture",
         "title": "PDE - Lecture",
-        "drive_link": "#"
+        "drive_link": "https://drive.google.com/drive/folders/1HB2KulvX8CzlfU1-yJlXwA9m050dkSa4"
     },
     {
         "id": "sem5-pde-td",
@@ -790,7 +790,7 @@
         "subject": "Partial Differential Equations",
         "type": "TD",
         "title": "PDE - Tutorials",
-        "drive_link": "#"
+        "drive_link": "https://drive.google.com/drive/folders/1fgi28AfZuSrvVZBmmRp8igFUAbePZqAy"
     },
     {
         "id": "sem5-pde-exam",
@@ -798,7 +798,7 @@
         "subject": "Partial Differential Equations",
         "type": "Exam",
         "title": "PDE - Exam",
-        "drive_link": "#"
+        "drive_link": "https://drive.google.com/drive/folders/12Paq8JGOlz4oBegyWaGelq38F-Lb1rTD"
     },
     {
         "id": "sem5-bigdata-lec",
@@ -950,7 +950,7 @@
         "subject": "Computer Vision",
         "type": "Lecture",
         "title": "Computer Vision - Lecture",
-        "drive_link": "#"
+        "drive_link": "https://drive.google.com/drive/folders/1q7PYY5dp_F9LjfUVm492dHlHGBs4YE7X"
     },
     {
         "id": "sem6-vision-tp",
