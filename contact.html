@@ -7,103 +7,286 @@
 </head>
 <body>
 <header>
-    <h1>Contact Us</h1>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="contributions.html">Contribute</a>
-        <a href="about.html">About Major</a>
-        <a href="contact.html">Contact Us</a>
-    </nav>
+    <div class="header-container">
+        <div class="logo-container">
+            <div class="logo-icon">AI</div>
+            <div>
+                <h1>AMAIDS Hub</h1>
+                <div class="subtitle">Applied Mathematics & AI for Data Science</div>
+            </div>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="contributions.html">Contribute</a>
+            <a href="about.html">About Major</a>
+            <a href="contact.html" class="active">Contact</a>
+        </nav>
+    </div>
 </header>
 
 <main>
-    <section id="contact-info">
-        <h2>Get in Touch</h2>
-        <p>Have questions about the Applied Mathematics & AI for Data Science program or this resource hub? Contact us using the form below.</p>
+    <section class="hero">
+        <h2>Contact & Support</h2>
+        <p>Get in touch for questions, feedback, or collaboration opportunities</p>
+    </section>
+
+    <section id="contact-info" class="card">
+        <h2>Contact Information</h2>
+        <p>Feel free to reach out through any of the following channels:</p>
         
-        <div class="program-details">
-            <h3>Program Details</h3>
-            <p><strong>University:</strong> University of Kasdi Merbah Ouargla</p>
-            <p><strong>Faculty:</strong> Faculty of Mathematics and Matter Sciences</p>
-            <p><strong>Department:</strong> Mathematics</p>
-            <p><strong>Program:</strong> Applied Mathematics for Artificial Intelligence and Data Science</p>
-            <p><strong>Academic Year:</strong> 2025-2026</p>
+        <div class="contact-grid">
+            <div class="contact-card">
+                <div class="contact-icon">📧</div>
+                <h3>Email</h3>
+                <p>Primary contact for program inquiries and resource submissions</p>
+                <a href="mailto:khaldiislam@gmail.com" class="contact-link">
+                    your.email@example.com
+                </a>
+                <p class="contact-note">Response time: 24-48 hours</p>
+            </div>
+            
+            <div class="contact-card">
+                <div class="contact-icon">📱</div>
+                <h3>Telegram</h3>
+                <p>Quick questions and community discussions</p>
+                <a href="https://t.me/yourusername" target="_blank" class="contact-link" rel="noopener noreferrer">
+                    @yourusername
+                </a>
+                <p class="contact-note">Usually respond within a few hours</p>
+            </div>
+            
+            <div class="contact-card">
+                <div class="contact-icon">💻</div>
+                <h3>GitHub</h3>
+                <p>Technical issues and code-related discussions</p>
+                <a href="https://github.com/khi-slam" target="_blank" class="contact-link" rel="noopener noreferrer">
+                    github.com/yourusername
+                </a>
+                <p class="contact-note">Open for issues and pull requests</p>
+            </div>
         </div>
     </section>
-    
-    <form id="contact-form">
-        <h3>Send Us a Message</h3>
-        
-        <div class="form-group">
-            <label for="contact-name">Your Name:</label>
-            <input type="text" id="contact-name" placeholder="Your Full Name" required>
+
+    <section class="card">
+        <h2>When to Contact</h2>
+        <div class="when-to-contact">
+            <div class="contact-reason">
+                <h4>📚 Resource Issues</h4>
+                <p>Broken links, incorrect content, or submission problems</p>
+            </div>
+            <div class="contact-reason">
+                <h4>🤝 Collaboration</h4>
+                <p>Suggestions for new features or partnership opportunities</p>
+            </div>
+            <div class="contact-reason">
+                <h4>💡 Feedback</h4>
+                <p>Suggestions to improve the platform or curriculum resources</p>
+            </div>
+            <div class="contact-reason">
+                <h4>❓ Questions</h4>
+                <p>Clarifications about the program or specific resources</p>
+            </div>
         </div>
-        
-        <div class="form-group">
-            <label for="contact-email">Email Address:</label>
-            <input type="email" id="contact-email" placeholder="your.email@example.com" required>
+    </section>
+
+    <section id="program-info" class="program-details">
+        <h2>Program Information</h2>
+        <div class="detail-grid">
+            <div class="detail-item">
+                <div class="detail-label">University</div>
+                <div>University of Kasdi Merbah Ouargla</div>
+            </div>
+            <div class="detail-item">
+                <div class="detail-label">Faculty</div>
+                <div>Faculty of Mathematics and Matter Sciences</div>
+            </div>
+            <div class="detail-item">
+                <div class="detail-label">Department</div>
+                <div>Mathematics</div>
+            </div>
+            <div class="detail-item">
+                <div class="detail-label">Program</div>
+                <div>Applied Mathematics for AI & Data Science</div>
+            </div>
+            <div class="detail-item">
+                <div class="detail-label">Academic Year</div>
+                <div>2025-2026</div>
+            </div>
+            <div class="detail-item">
+                <div class="detail-label">Credits</div>
+                <div>180 (30 per semester)</div>
+            </div>
         </div>
-        
-        <div class="form-group">
-            <label for="contact-role">Your Role:</label>
-            <select id="contact-role">
-                <option value="">Select your role</option>
-                <option value="student">Current Student</option>
-                <option value="alumni">Alumni</option>
-                <option value="professor">Professor/Lecturer</option>
-                <option value="researcher">Researcher</option>
-                <option value="industry">Industry Professional</option>
-                <option value="prospective">Prospective Student</option>
-                <option value="other">Other</option>
-            </select>
-        </div>
-        
-        <div class="form-group">
-            <label for="contact-subject">Subject:</label>
-            <select id="contact-subject">
-                <option value="">Select subject</option>
-                <option value="resource-issue">Resource Submission Issue</option>
-                <option value="curriculum-question">Curriculum/Program Question</option>
-                <option value="technical-issue">Technical Issue with Website</option>
-                <option value="collaboration">Collaboration Opportunity</option>
-                <option value="feedback">General Feedback</option>
-                <option value="other">Other</option>
-            </select>
-        </div>
-        
-        <div class="form-group">
-            <label for="contact-message">Message:</label>
-            <textarea id="contact-message" placeholder="Your message here..." rows="6" required></textarea>
-        </div>
-        
-        <button type="submit">Send Message</button>
-    </form>
+    </section>
 </main>
 
 <footer>
-    <p>&copy; 2025 AMAIDS Hub - University of Kasdi Merbah Ouargla</p>
-    <p>This resource hub is maintained by students and faculty of the Applied Mathematics & AI program.</p>
+    <div class="footer-container">
+        <div class="footer-section">
+            <h4>AMAIDS Hub</h4>
+            <p>Resource platform for Applied Mathematics & AI for Data Science program.</p>
+            <p>University of Kasdi Merbah Ouargla</p>
+        </div>
+        <div class="footer-section">
+            <h4>Quick Links</h4>
+            <a href="index.html">Home</a>
+            <a href="contributions.html">Contribute</a>
+            <a href="about.html">About Major</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-section">
+            <h4>Connect</h4>
+            <a href="mailto:khaldiislam720@gmail.com">📧 Email</a>
+            <a href="https://t.me/Khi_slam" target="_blank" rel="noopener noreferrer">📱 Telegram</a>
+            <a href="https://github.com/khi-slam" target="_blank" rel="noopener noreferrer">💻 GitHub</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 AMAIDS Hub. All rights reserved.</p>
+    </div>
 </footer>
 
 <script>
-document.getElementById("contact-form").addEventListener("submit", e => {
-    e.preventDefault();
-    
-    const name = document.getElementById("contact-name").value;
-    const role = document.getElementById("contact-role").value;
-    const subject = document.getElementById("contact-subject").value;
-    
-    let message = "Thank you! Your message has been sent.";
-    
-    if (role === "student" || role === "prospective") {
-        message += " A member of the student committee will respond to your inquiry shortly.";
-    } else if (role === "professor") {
-        message += " Thank you for your interest in the program. Your feedback is valuable.";
+// Add copy to clipboard functionality for email
+document.addEventListener('DOMContentLoaded', () => {
+    const emailLink = document.querySelector('a[href^="mailto:"]');
+    if (emailLink) {
+        emailLink.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                const email = emailLink.getAttribute('href').replace('mailto:', '');
+                navigator.clipboard.writeText(email).then(() => {
+                    alert('Email address copied to clipboard!');
+                });
+            }
+        });
     }
     
-    alert(message);
-    document.getElementById("contact-form").reset();
+    // Add click tracking for external links
+    document.querySelectorAll('a[target="_blank"]').forEach(link => {
+        link.addEventListener('click', () => {
+            // You could add analytics here
+            console.log(`Opening external link: ${link.href}`);
+        });
+    });
 });
 </script>
+
+<style>
+/* Additional styles for contact page */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.contact-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    text-align: center;
+    border: 2px solid var(--light-blue);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-blue);
+    box-shadow: var(--shadow-lg);
+}
+
+.contact-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    background: var(--light-blue);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-card h3 {
+    color: var(--primary-blue);
+    margin: 0.5rem 0;
+}
+
+.contact-card p {
+    color: var(--medium-gray);
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+}
+
+.contact-link {
+    display: inline-block;
+    margin: 1rem 0;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, var(--accent-blue) 0%, var(--secondary-blue) 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.contact-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.contact-note {
+    font-size: 0.8rem;
+    color: var(--medium-gray);
+    font-style: italic;
+    margin-top: 0.5rem;
+}
+
+.when-to-contact {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.contact-reason {
+    padding: 1rem;
+    background: var(--light-gray);
+    border-radius: var(--radius-md);
+    border-left: 4px solid var(--accent-blue);
+}
+
+.contact-reason h4 {
+    color: var(--primary-blue);
+    margin-bottom: 0.5rem;
+}
+
+.contact-reason p {
+    color: var(--medium-gray);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .when-to-contact {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .contact-card {
+        padding: 1rem;
+    }
+}
+</style>
 </body>
 </html>
