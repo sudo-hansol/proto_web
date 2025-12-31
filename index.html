@@ -37,7 +37,7 @@
             <label class="filter-label">Semester</label>
             <select id="filter-semester" class="filter-control">
                 <option value="all">Select Semester...</option>
-                </select>
+            </select>
         </div>
 
         <div>
@@ -53,12 +53,15 @@
                 <option value="all">All Types</option>
             </select>
         </div>
+
+        <div style="display: flex; align-items: flex-end;">
+            <button id="reset-filters" class="filter-btn" style="height: 42px; margin-top: 24px;">Reset Filters</button>
+        </div>
+
     </div>
 
     <div class="search-container">
-        <div class="search-icon">🔍</div>
-        <input type="text" id="search-input" class="filter-control" placeholder="Search resources by title...">
-    </div>
+        </div>
 </section>
 
     <div class="resource-grid" id="resource-grid">
@@ -93,7 +96,6 @@
 </footer>
 
 <script src="scripts/dataHandler.js"></script>
-<script src="scripts/filters.js"></script>
-<script src="scripts/app.js"></script>
+
 </body>
 </html>

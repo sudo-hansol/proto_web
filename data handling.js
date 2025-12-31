@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    let allResources = []; // Store data globally to access in functions
+    let allResources = []; 
 
     // 1. Fetch the JSON data
     fetch('resources.json')
@@ -7,15 +7,15 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(data => {
             allResources = data.resources;
             initializeFilters(data);
-            renderResources(allResources); // Show everything initially
+            renderResources(allResources); 
         })
         .catch(err => console.error('Error loading resources:', err));
 
-    // 2. Initialize the Semester Filter (The "Parent" Filter)
+    // 2. Initialize Filters & Event Listeners
     function initializeFilters(data) {
         const semesterSelect = document.getElementById('filter-semester');
         
-        // Use the 'semesters' list from JSON, or derive it from resources
+        // Populate Semester Dropdown
         data.semesters.forEach(sem => {
             const option = document.createElement('option');
             option.value = sem;
@@ -23,40 +23,43 @@ document.addEventListener('DOMContentLoaded', () => {
             semesterSelect.appendChild(option);
         });
 
-        // Add Event Listeners
+        // Add Event Listeners for Dropdowns
         document.getElementById('filter-semester').addEventListener('change', handleSemesterChange);
         document.getElementById('filter-subject').addEventListener('change', handleSubjectChange);
         document.getElementById('filter-type').addEventListener('change', handleTypeChange);
         document.getElementById('search-input').addEventListener('input', handleSearch);
+
+        // Add Event Listener for Reset Button (if you add one to HTML)
+        const resetButton = document.getElementById('reset-filters');
+        if (resetButton) {
+            resetButton.addEventListener('click', resetFilters);
+        }
     }
 
-    // 3. Handle Semester Change -> Updates Subject List
+    // 3. Filter Logic
     function handleSemesterChange() {
         const semesterVal = document.getElementById('filter-semester').value;
         const subjectSelect = document.getElementById('filter-subject');
         const typeSelect = document.getElementById('filter-type');
 
-        // Reset lower-level filters
+        // Reset lower dropdowns
         subjectSelect.innerHTML = '<option value="all">All Subjects</option>';
         typeSelect.innerHTML = '<option value="all">All Types</option>';
         subjectSelect.disabled = true;
         typeSelect.disabled = true;
 
         if (semesterVal === 'all') {
-            renderResources(allResources);
+            filterAndRender();
             return;
         }
 
-        // Enable Subject Select
+        // Enable Subject
         subjectSelect.disabled = false;
 
-        // Find all resources belonging to this Semester
+        // Populate Subjects (Unique ones only)
         const relevantResources = allResources.filter(r => r.semester == semesterVal);
-
-        // Extract UNIQUE subjects from these resources
         const uniqueSubjects = [...new Set(relevantResources.map(r => r.subject))];
 
-        // Populate Subject Dropdown
         uniqueSubjects.forEach(subj => {
             const option = document.createElement('option');
             option.value = subj;
@@ -67,13 +70,11 @@ document.addEventListener('DOMContentLoaded', () => {
         filterAndRender();
     }
 
-    // 4. Handle Subject Change -> Updates Type List
     function handleSubjectChange() {
         const subjectVal = document.getElementById('filter-subject').value;
         const semesterVal = document.getElementById('filter-semester').value;
         const typeSelect = document.getElementById('filter-type');
 
-        // Reset Type filter
         typeSelect.innerHTML = '<option value="all">All Types</option>';
         typeSelect.disabled = true;
 
@@ -82,18 +83,15 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // Enable Type Select
+        // Enable Type
         typeSelect.disabled = false;
 
-        // Find resources matching Semester AND Subject
+        // Populate Types (Unique ones only)
         const relevantResources = allResources.filter(r => 
             r.semester == semesterVal && r.subject === subjectVal
         );
-
-        // Extract UNIQUE types (filtering out empty strings if any)
         const uniqueTypes = [...new Set(relevantResources.map(r => r.type))].filter(t => t);
 
-        // Populate Type Dropdown
         uniqueTypes.forEach(type => {
             const option = document.createElement('option');
             option.value = type;
@@ -104,17 +102,29 @@ document.addEventListener('DOMContentLoaded', () => {
         filterAndRender();
     }
 
-    // 5. Handle Type Change
-    function handleTypeChange() {
-        filterAndRender();
+    function handleTypeChange() { filterAndRender(); }
+    function handleSearch() { filterAndRender(); }
+
+    // 4. Reset Function (From filters.js)
+    function resetFilters() {
+        document.getElementById('filter-semester').value = 'all';
+        
+        // Reset cascading dropdowns
+        const subjectSelect = document.getElementById('filter-subject');
+        const typeSelect = document.getElementById('filter-type');
+        
+        subjectSelect.innerHTML = '<option value="all">All Subjects</option>';
+        subjectSelect.disabled = true;
+        
+        typeSelect.innerHTML = '<option value="all">All Types</option>';
+        typeSelect.disabled = true;
+
+        document.getElementById('search-input').value = '';
+        
+        renderResources(allResources);
     }
 
-    // 6. Handle Search
-    function handleSearch() {
-        filterAndRender();
-    }
-
-    // 7. Master Filter Function (Runs on any change)
+    // 5. Master Filter Function
     function filterAndRender() {
         const semesterVal = document.getElementById('filter-semester').value;
         const subjectVal = document.getElementById('filter-subject').value;
@@ -122,16 +132,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const searchVal = document.getElementById('search-input').value.toLowerCase();
 
         const filtered = allResources.filter(item => {
-            // Check Semester (if 'all', ignore check)
             const matchSem = (semesterVal === 'all') || (item.semester == semesterVal);
-            
-            // Check Subject (if 'all', ignore check)
             const matchSub = (subjectVal === 'all') || (item.subject === subjectVal);
-            
-            // Check Type (if 'all', ignore check)
             const matchType = (typeVal === 'all') || (item.type === typeVal);
-
-            // Check Search
             const matchSearch = item.title.toLowerCase().includes(searchVal) || 
                                 item.subject.toLowerCase().includes(searchVal);
 
@@ -141,32 +144,41 @@ document.addEventListener('DOMContentLoaded', () => {
         renderResources(filtered);
     }
 
-    // 8. Render Grid
+    // 6. Render Grid
     function renderResources(resources) {
         const grid = document.getElementById('resource-grid');
         grid.innerHTML = ''; 
 
         if (resources.length === 0) {
-            grid.innerHTML = '<div class="no-results">No resources found.</div>';
+            grid.innerHTML = '<div class="no-results">No resources found matching your criteria.</div>';
             return;
         }
 
         resources.forEach(res => {
             const card = document.createElement('div');
             card.className = 'resource-card';
-            // Handle empty type display
-            const displayType = res.type ? `<span class="tag">${res.type}</span>` : '';
             
+            // Badge Styling Logic
+            let typeBadgeClass = 'badge-default';
+            if (res.type === 'Lecture') typeBadgeClass = 'badge-lecture';
+            else if (res.type === 'TD/Series') typeBadgeClass = 'badge-td';
+            else if (res.type === 'Exam') typeBadgeClass = 'badge-exam';
+            else if (res.type === 'TP') typeBadgeClass = 'badge-tp';
+
             card.innerHTML = `
-                <div class="card-header">
-                    <h4>${res.title}</h4>
-                    ${displayType}
+                <div class="resource-header">
+                    <div class="resource-badge semester-${res.semester}">Sem ${res.semester}</div>
+                    ${res.type ? `<div class="resource-badge ${typeBadgeClass}">${res.type}</div>` : ''}
                 </div>
-                <div class="card-body">
-                    <p><strong>Subject:</strong> ${res.subject}</p>
-                    <p><strong>Semester:</strong> ${res.semester}</p>
+                <h3 class="resource-title">${res.title}</h3>
+                <div class="resource-meta">
+                    <span class="resource-meta-item">
+                        📘 ${res.subject}
+                    </span>
                 </div>
-                <a href="${res.drive_link}" target="_blank" class="download-btn">Open Resource</a>
+                <a href="${res.drive_link || '#'}" class="resource-link" target="_blank">
+                    ${res.drive_link ? '📂 View Resource' : '🔒 Coming Soon'}
+                </a>
             `;
             grid.appendChild(card);
         });
