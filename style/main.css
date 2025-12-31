@@ -863,3 +863,20 @@ footer::before {
         color: black;
     }
 }
+#reset-filters {
+    background-color: #f8f9fa; /* Light grey */
+    border: 1px solid #ddd;
+    color: #333;
+    padding: 0 16px;
+    height: 42px; /* Match height of dropdowns */
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+#reset-filters:hover {
+    background-color: #e2e6ea;
+    border-color: #adb5bd;
+}
