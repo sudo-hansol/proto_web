@@ -17,41 +17,170 @@
 </header>
 
 <main>
+    <section id="contribute-info">
+        <h2>Share Your Study Materials</h2>
+        <p>Help fellow students by contributing lecture notes, exercises, exams, or projects. Please ensure materials are accurate and properly formatted.</p>
+    </section>
+    
     <form id="submit-form">
+        <h3>Submit New Resource</h3>
+        
         <input type="text" placeholder="Resource Title" required>
-        <select id="submit-semester">
-            <option>Semester 1</option>
-            <option>Semester 2</option>
-            <option>Semester 3</option>
-            <option>Semester 4</option>
-            <option>Semester 5</option>
-            <option>Semester 6</option>
+        
+        <label for="submit-semester">Semester:</label>
+        <select id="submit-semester" required>
+            <option value="">Select Semester</option>
+            <option value="1">Semester 1</option>
+            <option value="2">Semester 2</option>
+            <option value="3">Semester 3</option>
+            <option value="4">Semester 4</option>
+            <option value="5">Semester 5</option>
+            <option value="6">Semester 6</option>
         </select>
-        <select id="submit-subject">
-            <option>Mathematics</option>
-            <option>Probability & Statistics</option>
-            <option>Algorithms</option>
-            <option>AI Fundamentals</option>
+        
+        <label for="submit-subject">Subject:</label>
+        <select id="submit-subject" required>
+            <option value="">Select Subject</option>
+            <!-- Semester 1 -->
+            <optgroup label="Semester 1">
+                <option value="Analysis I">Analysis I</option>
+                <option value="Algebra I">Algebra I</option>
+                <option value="Algorithms and Data Structures 1">Algorithms and Data Structures 1</option>
+                <option value="Discrete Mathematics">Discrete Mathematics</option>
+                <option value="Free/Open Source Software">Free/Open Source Software</option>
+                <option value="Introduction to Data Visualization">Introduction to Data Visualization</option>
+                <option value="Academic English for AI & Data Science">Academic English for AI & Data Science</option>
+            </optgroup>
+            
+            <!-- Semester 2 -->
+            <optgroup label="Semester 2">
+                <option value="Analysis II">Analysis II</option>
+                <option value="Algebra II">Algebra II</option>
+                <option value="Algorithms and Data Structures 2">Algorithms and Data Structures 2</option>
+                <option value="Probability and Descriptive Statistics">Probability and Descriptive Statistics</option>
+                <option value="Introduction to Artificial Intelligence">Introduction to Artificial Intelligence</option>
+                <option value="Mathematical Physics Equations">Mathematical Physics Equations</option>
+                <option value="Fundamentals of Programming and Scientific Computing with Python">Fundamentals of Programming and Scientific Computing with Python</option>
+            </optgroup>
+            
+            <!-- Semester 3 -->
+            <optgroup label="Semester 3">
+                <option value="Analysis III">Analysis III</option>
+                <option value="Algebra III">Algebra III</option>
+                <option value="Introduction to Topology">Introduction to Topology</option>
+                <option value="Numerical Analysis">Numerical Analysis</option>
+                <option value="Mathematics for Machine Learning 1">Mathematics for Machine Learning 1</option>
+                <option value="Graph Theory">Graph Theory</option>
+                <option value="Data Analysis">Data Analysis</option>
+            </optgroup>
+            
+            <!-- Semester 4 -->
+            <optgroup label="Semester 4">
+                <option value="Measure and Integration">Measure and Integration</option>
+                <option value="Normed Vector Spaces">Normed Vector Spaces</option>
+                <option value="Differential Equations">Differential Equations</option>
+                <option value="Mathematics for Machine Learning 2">Mathematics for Machine Learning 2</option>
+                <option value="Geometry">Geometry</option>
+                <option value="Introduction to Machine Learning">Introduction to Machine Learning</option>
+                <option value="Entrepreneurship and Creativity Workshops">Entrepreneurship and Creativity Workshops</option>
+            </optgroup>
+            
+            <!-- Semester 5 -->
+            <optgroup label="Semester 5">
+                <option value="Introduction to Functional Analysis">Introduction to Functional Analysis</option>
+                <option value="Differential Geometry">Differential Geometry</option>
+                <option value="Inferential Statistics">Inferential Statistics</option>
+                <option value="Complex Analysis">Complex Analysis</option>
+                <option value="Partial Differential Equations">Partial Differential Equations</option>
+                <option value="Big Data and Cloud Computing">Big Data and Cloud Computing</option>
+                <option value="Scientific Methodology and Writing">Scientific Methodology and Writing</option>
+            </optgroup>
+            
+            <!-- Semester 6 -->
+            <optgroup label="Semester 6">
+                <option value="Advanced Probability">Advanced Probability</option>
+                <option value="Introduction to Stochastic Processes">Introduction to Stochastic Processes</option>
+                <option value="Deep Learning & Physics-Informed Neural Networks">Deep Learning & Physics-Informed Neural Networks</option>
+                <option value="Natural Language Processing (NLP)">Natural Language Processing (NLP)</option>
+                <option value="Computer Vision">Computer Vision</option>
+                <option value="Time Series">Time Series</option>
+                <option value="Ethics and History of Modern Mathematics">Ethics and History of Modern Mathematics</option>
+            </optgroup>
         </select>
-        <select id="submit-type">
-            <option>Lecture</option>
-            <option>TD/Series</option>
-            <option>Exam</option>
+        
+        <label for="submit-type">Resource Type:</label>
+        <select id="submit-type" required>
+            <option value="">Select Type</option>
+            <option value="Lecture">Lecture Notes</option>
+            <option value="TD/Series">TD/Series (Exercises)</option>
+            <option value="Exam">Exam/Quiz</option>
+            <option value="TP">Practical Work</option>
+            <option value="Project">Project/Assignment</option>
+            <option value="Summary">Course Summary</option>
+            <option value="Reference">Reference Material</option>
         </select>
-        <input type="url" placeholder="Google Drive Link" required>
-        <p>Make sure your file is set to "Anyone with the link can view"</p>
-        <button type="submit">Submit</button>
+        
+        <label for="submit-link">Resource Link:</label>
+        <input type="url" id="submit-link" placeholder="Google Drive, OneDrive, or Dropbox Link" required>
+        
+        <label for="submit-description">Description (optional):</label>
+        <textarea id="submit-description" placeholder="Brief description of the resource..."></textarea>
+        
+        <div class="privacy-notice">
+            <p><strong>Important:</strong> Make sure your file is set to <em>"Anyone with the link can view"</em> on Google Drive or equivalent sharing setting.</p>
+            <p>Only share materials you have created or have permission to share. Do not share copyrighted materials without permission.</p>
+        </div>
+        
+        <button type="submit">Submit Resource</button>
     </form>
 </main>
 
 <footer>
-    <p>&copy; 2025 AMAIDS Hub</p>
+    <p>&copy; 2025 AMAIDS Hub - University of Kasdi Merbah Ouargla</p>
 </footer>
 
 <script>
-document.getElementById("submit-form").addEventListener("submit", e=>{
+document.getElementById("submit-form").addEventListener("submit", e => {
     e.preventDefault();
-    alert("Thank you! Your resource has been submitted.");
+    
+    const semester = document.getElementById("submit-semester").value;
+    const subject = document.getElementById("submit-subject").value;
+    const type = document.getElementById("submit-type").value;
+    
+    if (!semester || !subject || !type) {
+        alert("Please fill all required fields: Semester, Subject, and Type.");
+        return;
+    }
+    
+    alert(`Thank you! Your ${type} for ${subject} (Semester ${semester}) has been submitted for review.`);
+    document.getElementById("submit-form").reset();
+});
+
+// Optional: Filter subjects based on selected semester
+document.getElementById("submit-semester").addEventListener("change", function() {
+    const semester = this.value;
+    const subjectSelect = document.getElementById("submit-subject");
+    
+    if (!semester) {
+        // Show all subjects
+        Array.from(subjectSelect.options).forEach(option => {
+            option.style.display = '';
+        });
+        return;
+    }
+    
+    // Show only subjects for selected semester
+    Array.from(subjectSelect.options).forEach(option => {
+        if (option.parentElement.label === `Semester ${semester}` || 
+            option.parentElement.tagName !== 'OPTGROUP') {
+            option.style.display = '';
+        } else {
+            option.style.display = 'none';
+        }
+    });
+    
+    // Reset subject selection
+    subjectSelect.value = '';
 });
 </script>
 </body>

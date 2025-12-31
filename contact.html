@@ -17,22 +17,92 @@
 </header>
 
 <main>
+    <section id="contact-info">
+        <h2>Get in Touch</h2>
+        <p>Have questions about the Applied Mathematics & AI for Data Science program or this resource hub? Contact us using the form below.</p>
+        
+        <div class="program-details">
+            <h3>Program Details</h3>
+            <p><strong>University:</strong> University of Kasdi Merbah Ouargla</p>
+            <p><strong>Faculty:</strong> Faculty of Mathematics and Matter Sciences</p>
+            <p><strong>Department:</strong> Mathematics</p>
+            <p><strong>Program:</strong> Applied Mathematics for Artificial Intelligence and Data Science</p>
+            <p><strong>Academic Year:</strong> 2025-2026</p>
+        </div>
+    </section>
+    
     <form id="contact-form">
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Email" required>
-        <textarea placeholder="Message" required></textarea>
-        <button type="submit">Send</button>
+        <h3>Send Us a Message</h3>
+        
+        <div class="form-group">
+            <label for="contact-name">Your Name:</label>
+            <input type="text" id="contact-name" placeholder="Your Full Name" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="contact-email">Email Address:</label>
+            <input type="email" id="contact-email" placeholder="your.email@example.com" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="contact-role">Your Role:</label>
+            <select id="contact-role">
+                <option value="">Select your role</option>
+                <option value="student">Current Student</option>
+                <option value="alumni">Alumni</option>
+                <option value="professor">Professor/Lecturer</option>
+                <option value="researcher">Researcher</option>
+                <option value="industry">Industry Professional</option>
+                <option value="prospective">Prospective Student</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="contact-subject">Subject:</label>
+            <select id="contact-subject">
+                <option value="">Select subject</option>
+                <option value="resource-issue">Resource Submission Issue</option>
+                <option value="curriculum-question">Curriculum/Program Question</option>
+                <option value="technical-issue">Technical Issue with Website</option>
+                <option value="collaboration">Collaboration Opportunity</option>
+                <option value="feedback">General Feedback</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="contact-message">Message:</label>
+            <textarea id="contact-message" placeholder="Your message here..." rows="6" required></textarea>
+        </div>
+        
+        <button type="submit">Send Message</button>
     </form>
 </main>
 
 <footer>
-    <p>&copy; 2025 AMAIDS Hub</p>
+    <p>&copy; 2025 AMAIDS Hub - University of Kasdi Merbah Ouargla</p>
+    <p>This resource hub is maintained by students and faculty of the Applied Mathematics & AI program.</p>
 </footer>
 
 <script>
-document.getElementById("contact-form").addEventListener("submit", e=>{
+document.getElementById("contact-form").addEventListener("submit", e => {
     e.preventDefault();
-    alert("Thank you! Your message has been sent.");
+    
+    const name = document.getElementById("contact-name").value;
+    const role = document.getElementById("contact-role").value;
+    const subject = document.getElementById("contact-subject").value;
+    
+    let message = "Thank you! Your message has been sent.";
+    
+    if (role === "student" || role === "prospective") {
+        message += " A member of the student committee will respond to your inquiry shortly.";
+    } else if (role === "professor") {
+        message += " Thank you for your interest in the program. Your feedback is valuable.";
+    }
+    
+    alert(message);
+    document.getElementById("contact-form").reset();
 });
 </script>
 </body>
