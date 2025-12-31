@@ -1,386 +1,358 @@
+
 {
   "resources": [
     {
-      "id": "sem1-analysis1",
+      "id": "sem1-analysis1-lec",
       "semester": 1,
       "subject": "Analysis I",
-      "type": "",
-      "title": "Analysis I",
-      "drive_link": ""
+      "type": "Lecture",
+      "title": "Analysis I - Course Notes",
+      "drive_link": "#"
     },
     {
-      "id": "sem1-algebra1",
+      "id": "sem1-analysis1-td",
+      "semester": 1,
+      "subject": "Analysis I",
+      "type": "TD/Series",
+      "title": "Analysis I - Series 1",
+      "drive_link": "#"
+    },
+    {
+      "id": "sem1-analysis1-exam",
+      "semester": 1,
+      "subject": "Analysis I",
+      "type": "Exam",
+      "title": "Analysis I - 2023 Final Exam",
+      "drive_link": "#"
+    },
+    {
+      "id": "sem1-algebra1-lec",
       "semester": 1,
       "subject": "Algebra I",
-      "type": "",
-      "title": "Algebra I",
-      "drive_link": ""
+      "type": "Lecture",
+      "title": "Algebra I - Lecture Slides",
+      "drive_link": "#"
     },
     {
       "id": "sem1-algo1",
       "semester": 1,
       "subject": "Algorithms and Data Structures 1",
-      "type": "",
+      "type": "Lecture",
       "title": "Algorithms and Data Structures 1",
-      "drive_link": ""
+      "drive_link": "#"
     },
     {
       "id": "sem1-discrete",
       "semester": 1,
       "subject": "Discrete Mathematics",
-      "type": "",
+      "type": "Lecture",
       "title": "Discrete Mathematics",
-      "drive_link": ""
+      "drive_link": "#"
     },
     {
       "id": "sem1-foss",
       "semester": 1,
       "subject": "Free/Open Source Software",
-      "type": "",
+      "type": "Lecture",
       "title": "Free/Open Source Software",
-      "drive_link": ""
+      "drive_link": "#"
     },
     {
       "id": "sem1-dataviz",
       "semester": 1,
       "subject": "Introduction to Data Visualization",
-      "type": "",
+      "type": "TP",
       "title": "Introduction to Data Visualization",
-      "drive_link": ""
+      "drive_link": "#"
     },
     {
       "id": "sem1-english",
       "semester": 1,
       "subject": "Academic English for AI & Data Science",
-      "type": "",
+      "type": "Lecture",
       "title": "Academic English for AI & Data Science",
-      "drive_link": ""
+      "drive_link": "#"
     },
     {
       "id": "sem2-analysis2",
       "semester": 2,
       "subject": "Analysis II",
-      "type": "",
+      "type": "Lecture",
       "title": "Analysis II",
-      "drive_link": ""
+      "drive_link": "#"
     },
     {
       "id": "sem2-algebra2",
       "semester": 2,
       "subject": "Algebra II",
-      "type": "",
+      "type": "Lecture",
       "title": "Algebra II",
-      "drive_link": ""
+      "drive_link": "#"
     },
     {
       "id": "sem2-algo2",
       "semester": 2,
       "subject": "Algorithms and Data Structures 2",
-      "type": "",
+      "type": "Lecture",
       "title": "Algorithms and Data Structures 2",
-      "drive_link": ""
+      "drive_link": "#"
     },
     {
       "id": "sem2-probstat",
       "semester": 2,
       "subject": "Probability and Descriptive Statistics",
-      "type": "",
+      "type": "Lecture",
       "title": "Probability and Descriptive Statistics",
-      "drive_link": ""
+      "drive_link": "#"
     },
     {
       "id": "sem2-introai",
       "semester": 2,
       "subject": "Introduction to Artificial Intelligence",
-      "type": "",
+      "type": "Lecture",
       "title": "Introduction to Artificial Intelligence",
-      "drive_link": ""
+      "drive_link": "#"
     },
     {
       "id": "sem2-physeq",
       "semester": 2,
       "subject": "Mathematical Physics Equations",
-      "type": "",
+      "type": "Lecture",
       "title": "Mathematical Physics Equations",
-      "drive_link": ""
+      "drive_link": "#"
     },
     {
       "id": "sem2-python",
       "semester": 2,
       "subject": "Fundamentals of Programming and Scientific Computing with Python",
-      "type": "",
+      "type": "TP",
       "title": "Fundamentals of Programming and Scientific Computing with Python",
-      "drive_link": ""
+      "drive_link": "#"
     },
     {
       "id": "sem3-analysis3",
       "semester": 3,
       "subject": "Analysis III",
-      "type": "",
+      "type": "Lecture",
       "title": "Analysis III",
-      "drive_link": ""
+      "drive_link": "#"
     },
     {
       "id": "sem3-algebra3",
       "semester": 3,
       "subject": "Algebra III",
-      "type": "",
+      "type": "Lecture",
       "title": "Algebra III",
-      "drive_link": ""
+      "drive_link": "#"
     },
     {
       "id": "sem3-topology",
       "semester": 3,
       "subject": "Introduction to Topology",
-      "type": "",
+      "type": "Lecture",
       "title": "Introduction to Topology",
-      "drive_link": ""
+      "drive_link": "#"
     },
     {
       "id": "sem3-numerical",
       "semester": 3,
       "subject": "Numerical Analysis",
-      "type": "",
+      "type": "Lecture",
       "title": "Numerical Analysis",
-      "drive_link": ""
+      "drive_link": "#"
     },
     {
       "id": "sem3-mathml1",
       "semester": 3,
       "subject": "Mathematics for Machine Learning 1",
-      "type": "",
+      "type": "Lecture",
       "title": "Mathematics for Machine Learning 1",
-      "drive_link": ""
+      "drive_link": "#"
     },
     {
       "id": "sem3-graph",
       "semester": 3,
       "subject": "Graph Theory",
-      "type": "",
+      "type": "Lecture",
       "title": "Graph Theory",
-      "drive_link": ""
+      "drive_link": "#"
     },
     {
       "id": "sem3-data-analysis",
       "semester": 3,
       "subject": "Data Analysis",
-      "type": "",
+      "type": "Lecture",
       "title": "Data Analysis",
-      "drive_link": ""
+      "drive_link": "#"
     },
     {
       "id": "sem4-measure",
       "semester": 4,
       "subject": "Measure and Integration",
-      "type": "",
+      "type": "Lecture",
       "title": "Measure and Integration",
-      "drive_link": ""
+      "drive_link": "#"
     },
     {
       "id": "sem4-normed",
       "semester": 4,
       "subject": "Normed Vector Spaces",
-      "type": "",
+      "type": "Lecture",
       "title": "Normed Vector Spaces",
-      "drive_link": ""
+      "drive_link": "#"
     },
     {
       "id": "sem4-diffeq",
       "semester": 4,
       "subject": "Differential Equations",
-      "type": "",
+      "type": "Lecture",
       "title": "Differential Equations",
-      "drive_link": ""
+      "drive_link": "#"
     },
     {
       "id": "sem4-mathml2",
       "semester": 4,
       "subject": "Mathematics for Machine Learning 2",
-      "type": "",
+      "type": "Lecture",
       "title": "Mathematics for Machine Learning 2",
-      "drive_link": ""
+      "drive_link": "#"
     },
     {
       "id": "sem4-geometry",
       "semester": 4,
       "subject": "Geometry",
-      "type": "",
+      "type": "Lecture",
       "title": "Geometry",
-      "drive_link": ""
+      "drive_link": "#"
     },
     {
       "id": "sem4-introml",
       "semester": 4,
       "subject": "Introduction to Machine Learning",
-      "type": "",
+      "type": "Lecture",
       "title": "Introduction to Machine Learning",
-      "drive_link": ""
+      "drive_link": "#"
     },
     {
       "id": "sem4-entrepreneurship",
       "semester": 4,
       "subject": "Entrepreneurship and Creativity Workshops",
-      "type": "",
+      "type": "Lecture",
       "title": "Entrepreneurship and Creativity Workshops",
-      "drive_link": ""
+      "drive_link": "#"
     },
     {
       "id": "sem5-func",
       "semester": 5,
       "subject": "Introduction to Functional Analysis",
-      "type": "",
+      "type": "Lecture",
       "title": "Introduction to Functional Analysis",
-      "drive_link": ""
+      "drive_link": "#"
     },
     {
       "id": "sem5-diffgeo",
       "semester": 5,
       "subject": "Differential Geometry",
-      "type": "",
+      "type": "Lecture",
       "title": "Differential Geometry",
-      "drive_link": ""
+      "drive_link": "#"
     },
     {
       "id": "sem5-infer-stats",
       "semester": 5,
       "subject": "Inferential Statistics",
-      "type": "",
+      "type": "Lecture",
       "title": "Inferential Statistics",
-      "drive_link": ""
+      "drive_link": "#"
     },
     {
       "id": "sem5-complex",
       "semester": 5,
       "subject": "Complex Analysis",
-      "type": "",
+      "type": "Lecture",
       "title": "Complex Analysis",
-      "drive_link": ""
+      "drive_link": "#"
     },
     {
       "id": "sem5-pde",
       "semester": 5,
       "subject": "Partial Differential Equations",
-      "type": "",
+      "type": "Lecture",
       "title": "Partial Differential Equations",
-      "drive_link": ""
+      "drive_link": "#"
     },
     {
       "id": "sem5-bigdata",
       "semester": 5,
       "subject": "Big Data and Cloud Computing",
-      "type": "",
+      "type": "Lecture",
       "title": "Big Data and Cloud Computing",
-      "drive_link": ""
+      "drive_link": "#"
     },
     {
       "id": "sem5-methodology",
       "semester": 5,
       "subject": "Scientific Methodology and Writing",
-      "type": "",
+      "type": "Lecture",
       "title": "Scientific Methodology and Writing",
-      "drive_link": ""
+      "drive_link": "#"
     },
     {
       "id": "sem6-advprob",
       "semester": 6,
       "subject": "Advanced Probability",
-      "type": "",
+      "type": "Lecture",
       "title": "Advanced Probability",
-      "drive_link": ""
+      "drive_link": "#"
     },
     {
       "id": "sem6-stochastic",
       "semester": 6,
       "subject": "Introduction to Stochastic Processes",
-      "type": "",
+      "type": "Lecture",
       "title": "Introduction to Stochastic Processes",
-      "drive_link": ""
+      "drive_link": "#"
     },
     {
       "id": "sem6-deeplearning",
       "semester": 6,
       "subject": "Deep Learning & Physics-Informed Neural Networks",
-      "type": "",
+      "type": "Lecture",
       "title": "Deep Learning & Physics-Informed Neural Networks",
-      "drive_link": ""
+      "drive_link": "#"
     },
     {
       "id": "sem6-nlp",
       "semester": 6,
       "subject": "Natural Language Processing (NLP)",
-      "type": "",
+      "type": "Lecture",
       "title": "Natural Language Processing (NLP)",
-      "drive_link": ""
+      "drive_link": "#"
     },
     {
       "id": "sem6-vision",
       "semester": 6,
       "subject": "Computer Vision",
-      "type": "",
+      "type": "Lecture",
       "title": "Computer Vision",
-      "drive_link": ""
+      "drive_link": "#"
     },
     {
       "id": "sem6-timeseries",
       "semester": 6,
       "subject": "Time Series",
-      "type": "",
+      "type": "Lecture",
       "title": "Time Series",
-      "drive_link": ""
+      "drive_link": "#"
     },
     {
       "id": "sem6-ethics",
       "semester": 6,
       "subject": "Ethics and History of Modern Mathematics",
-      "type": "",
+      "type": "Lecture",
       "title": "Ethics and History of Modern Mathematics",
-      "drive_link": ""
+      "drive_link": "#"
     }
   ],
-  "semesters": [1, 2, 3, 4, 5, 6],
-  "subjects": [
-    "Analysis I",
-    "Algebra I",
-    "Algorithms and Data Structures 1",
-    "Discrete Mathematics",
-    "Free/Open Source Software",
-    "Introduction to Data Visualization",
-    "Academic English for AI & Data Science",
-    "Analysis II",
-    "Algebra II",
-    "Algorithms and Data Structures 2",
-    "Probability and Descriptive Statistics",
-    "Introduction to Artificial Intelligence",
-    "Mathematical Physics Equations",
-    "Fundamentals of Programming and Scientific Computing with Python",
-    "Analysis III",
-    "Algebra III",
-    "Introduction to Topology",
-    "Numerical Analysis",
-    "Mathematics for Machine Learning 1",
-    "Graph Theory",
-    "Data Analysis",
-    "Measure and Integration",
-    "Normed Vector Spaces",
-    "Differential Equations",
-    "Mathematics for Machine Learning 2",
-    "Geometry",
-    "Introduction to Machine Learning",
-    "Entrepreneurship and Creativity Workshops",
-    "Introduction to Functional Analysis",
-    "Differential Geometry",
-    "Inferential Statistics",
-    "Complex Analysis",
-    "Partial Differential Equations",
-    "Big Data and Cloud Computing",
-    "Scientific Methodology and Writing",
-    "Advanced Probability",
-    "Introduction to Stochastic Processes",
-    "Deep Learning & Physics-Informed Neural Networks",
-    "Natural Language Processing (NLP)",
-    "Computer Vision",
-    "Time Series",
-    "Ethics and History of Modern Mathematics"
-  ],
-  "types": ["Lecture", "TD/Series", "Exam"]
+  "semesters": [1, 2, 3, 4, 5, 6]
 }
