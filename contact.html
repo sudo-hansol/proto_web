@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AMAIDS Hub - Contact</title>
+<link rel="stylesheet" href="style/main.css">
+</head>
+<body>
+<header>
+    <h1>Contact Us</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="contributions.html">Contribute</a>
+        <a href="about.html">About Major</a>
+        <a href="contact.html">Contact Us</a>
+    </nav>
+</header>
+
+<main>
+    <form id="contact-form">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Email" required>
+        <textarea placeholder="Message" required></textarea>
+        <button type="submit">Send</button>
+    </form>
+</main>
+
+<footer>
+    <p>&copy; 2025 AMAIDS Hub</p>
+</footer>
+
+<script>
+document.getElementById("contact-form").addEventListener("submit", e=>{
+    e.preventDefault();
+    alert("Thank you! Your message has been sent.");
+});
+</script>
+</body>
+</html>

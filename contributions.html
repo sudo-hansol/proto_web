@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AMAIDS Hub - Contribute</title>
+<link rel="stylesheet" href="style/main.css">
+</head>
+<body>
+<header>
+    <h1>Contribute Resources</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="contributions.html">Contribute</a>
+        <a href="about.html">About Major</a>
+        <a href="contact.html">Contact Us</a>
+    </nav>
+</header>
+
+<main>
+    <form id="submit-form">
+        <input type="text" placeholder="Resource Title" required>
+        <select id="submit-semester">
+            <option>Semester 1</option>
+            <option>Semester 2</option>
+            <option>Semester 3</option>
+            <option>Semester 4</option>
+            <option>Semester 5</option>
+            <option>Semester 6</option>
+        </select>
+        <select id="submit-subject">
+            <option>Mathematics</option>
+            <option>Probability & Statistics</option>
+            <option>Algorithms</option>
+            <option>AI Fundamentals</option>
+        </select>
+        <select id="submit-type">
+            <option>Lecture</option>
+            <option>TD/Series</option>
+            <option>Exam</option>
+        </select>
+        <input type="url" placeholder="Google Drive Link" required>
+        <p>Make sure your file is set to "Anyone with the link can view"</p>
+        <button type="submit">Submit</button>
+    </form>
+</main>
+
+<footer>
+    <p>&copy; 2025 AMAIDS Hub</p>
+</footer>
+
+<script>
+document.getElementById("submit-form").addEventListener("submit", e=>{
+    e.preventDefault();
+    alert("Thank you! Your resource has been submitted.");
+});
+</script>
+</body>
+</html>
