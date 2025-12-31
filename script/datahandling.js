@@ -38,37 +38,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 3. Filter Logic
     function handleSemesterChange() {
-        const semesterVal = document.getElementById('filter-semester').value;
-        const subjectSelect = document.getElementById('filter-subject');
-        const typeSelect = document.getElementById('filter-type');
+    const semesterVal = document.getElementById('filter-semester').value;
+    const subjectSelect = document.getElementById('filter-subject');
+    const typeSelect = document.getElementById('filter-type');
 
-        // Reset lower dropdowns
-        subjectSelect.innerHTML = '<option value="all">All Subjects</option>';
-        typeSelect.innerHTML = '<option value="all">All Types</option>';
-        subjectSelect.disabled = true;
-        typeSelect.disabled = true;
+    // Reset lower dropdowns
+    subjectSelect.innerHTML = '<option value="all">All Subjects</option>';
+    typeSelect.innerHTML = '<option value="all">All Types</option>';
+    subjectSelect.disabled = true;
+    typeSelect.disabled = true;
 
-        if (semesterVal === 'all') {
-            filterAndRender();
-            return;
-        }
+    if (semesterVal === 'all') {
+        filterAndRender();
+        return;
+    }
 
-        // Enable Subject
-        subjectSelect.disabled = false;
+    // Enable Subject
+    subjectSelect.disabled = false;
 
-        // Populate Subjects (Unique ones only)
-        const relevantResources = allResources.filter(r => r.semester == semesterVal);
-        const uniqueSubjects = [...new Set(relevantResources.map(r => r.subject))];
+    // Populate Subjects (Unique ones only) - FIXED
+    const relevantResources = allResources.filter(r => r.semester == semesterVal);
+    const uniqueSubjects = [...new Set(relevantResources.map(r => r.subject))];
 
-        uniqueSubjects.forEach(subj => {
+    uniqueSubjects.forEach(subj => {
+        if (subj) { // Check if subject is not null/undefined
             const option = document.createElement('option');
             option.value = subj;
             option.textContent = subj;
             subjectSelect.appendChild(option);
-        });
+        }
+    });
 
-        filterAndRender();
-    }
+    filterAndRender();
+}
 
     function handleSubjectChange() {
         const subjectVal = document.getElementById('filter-subject').value;
@@ -126,24 +128,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 5. Master Filter Function
     function filterAndRender() {
-        const semesterVal = document.getElementById('filter-semester').value;
-        const subjectVal = document.getElementById('filter-subject').value;
-        const typeVal = document.getElementById('filter-type').value;
-        const searchVal = document.getElementById('search-input').value.toLowerCase();
+    const semesterVal = document.getElementById('filter-semester').value;
+    const subjectVal = document.getElementById('filter-subject').value;
+    const typeVal = document.getElementById('filter-type').value;
+    const searchVal = document.getElementById('search-input').value.toLowerCase();
 
-        const filtered = allResources.filter(item => {
-            const matchSem = (semesterVal === 'all') || (item.semester == semesterVal);
-            const matchSub = (subjectVal === 'all') || (item.subject === subjectVal);
-            const matchType = (typeVal === 'all') || (item.type === typeVal);
-            const matchSearch = item.title.toLowerCase().includes(searchVal) || 
-                                item.subject.toLowerCase().includes(searchVal);
+    const filtered = allResources.filter(item => {
+        const matchSem = (semesterVal === 'all') || (item.semester == semesterVal);
+        const matchSub = (subjectVal === 'all') || (item.subject === subjectVal);
+        const matchType = (typeVal === 'all') || (item.type === typeVal);
+        
+        // FIXED: Proper search in title AND subject
+        let matchSearch = true;
+        if (searchVal) {
+            const titleMatch = item.title.toLowerCase().includes(searchVal);
+            const subjectMatch = item.subject.toLowerCase().includes(searchVal);
+            matchSearch = titleMatch || subjectMatch;
+        }
 
-            return matchSem && matchSub && matchType && matchSearch;
-        });
+        return matchSem && matchSub && matchType && matchSearch;
+    });
 
-        renderResources(filtered);
-    }
-
+    renderResources(filtered);
+}
     // 6. Render Grid
     function renderResources(resources) {
         const grid = document.getElementById('resource-grid');
