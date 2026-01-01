@@ -1,17 +1,45 @@
 document.addEventListener('DOMContentLoaded', () => {
     let allResources = []; 
 
-    // 1. Fetch the JSON data
+    // 1. ADD THE NEW FUNCTIONS AT THE BEGINNING
+    function updateResultsCounter(count, total) {
+        const counter = document.getElementById('results-counter');
+        if (counter) {
+            counter.innerHTML = `<i class="fas fa-file-alt"></i> Showing ${count} of ${total} resources`;
+        }
+    }
+
+    function updateHeroStats(data) {
+        const resources = data.resources;
+        
+        // Count unique subjects
+        const uniqueSubjects = [...new Set(resources.map(r => r.subject))].length;
+        const subjectCountEl = document.getElementById('subject-count');
+        if (subjectCountEl) subjectCountEl.textContent = `${uniqueSubjects}+`;
+        
+        // Count total resources
+        const resourceCountEl = document.getElementById('resource-count');
+        if (resourceCountEl) resourceCountEl.textContent = `${resources.length}+`;
+        
+        // Count unique types
+        const uniqueTypes = [...new Set(resources.map(r => r.type))].length;
+        const typeCountEl = document.getElementById('type-count');
+        if (typeCountEl) typeCountEl.textContent = uniqueTypes;
+    }
+
+    // 2. UPDATE THE FETCH SECTION
     fetch('resources.json')
         .then(response => response.json())
         .then(data => {
             allResources = data.resources;
             initializeFilters(data);
+            updateHeroStats(data);
             renderResources(allResources); 
+            updateResultsCounter(allResources.length, allResources.length);
         })
         .catch(err => console.error('Error loading resources:', err));
 
-    // 2. Initialize Filters & Event Listeners
+    // 3. Initialize Filters & Event Listeners
     function initializeFilters(data) {
         const semesterSelect = document.getElementById('filter-semester');
         
@@ -29,48 +57,48 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('filter-type').addEventListener('change', handleTypeChange);
         document.getElementById('search-input').addEventListener('input', handleSearch);
 
-        // Add Event Listener for Reset Button (if you add one to HTML)
+        // Add Event Listener for Reset Button
         const resetButton = document.getElementById('reset-filters');
         if (resetButton) {
             resetButton.addEventListener('click', resetFilters);
         }
     }
 
-    // 3. Filter Logic
+    // 4. Filter Logic (keep your existing functions)
     function handleSemesterChange() {
-    const semesterVal = document.getElementById('filter-semester').value;
-    const subjectSelect = document.getElementById('filter-subject');
-    const typeSelect = document.getElementById('filter-type');
+        const semesterVal = document.getElementById('filter-semester').value;
+        const subjectSelect = document.getElementById('filter-subject');
+        const typeSelect = document.getElementById('filter-type');
 
-    // Reset lower dropdowns
-    subjectSelect.innerHTML = '<option value="all">All Subjects</option>';
-    typeSelect.innerHTML = '<option value="all">All Types</option>';
-    subjectSelect.disabled = true;
-    typeSelect.disabled = true;
+        // Reset lower dropdowns
+        subjectSelect.innerHTML = '<option value="all">All Subjects</option>';
+        typeSelect.innerHTML = '<option value="all">All Types</option>';
+        subjectSelect.disabled = true;
+        typeSelect.disabled = true;
 
-    if (semesterVal === 'all') {
-        filterAndRender();
-        return;
-    }
-
-    // Enable Subject
-    subjectSelect.disabled = false;
-
-    // Populate Subjects (Unique ones only) - FIXED
-    const relevantResources = allResources.filter(r => r.semester == semesterVal);
-    const uniqueSubjects = [...new Set(relevantResources.map(r => r.subject))];
-
-    uniqueSubjects.forEach(subj => {
-        if (subj) { // Check if subject is not null/undefined
-            const option = document.createElement('option');
-            option.value = subj;
-            option.textContent = subj;
-            subjectSelect.appendChild(option);
+        if (semesterVal === 'all') {
+            filterAndRender();
+            return;
         }
-    });
 
-    filterAndRender();
-}
+        // Enable Subject
+        subjectSelect.disabled = false;
+
+        // Populate Subjects (Unique ones only)
+        const relevantResources = allResources.filter(r => r.semester == semesterVal);
+        const uniqueSubjects = [...new Set(relevantResources.map(r => r.subject))];
+
+        uniqueSubjects.forEach(subj => {
+            if (subj) {
+                const option = document.createElement('option');
+                option.value = subj;
+                option.textContent = subj;
+                subjectSelect.appendChild(option);
+            }
+        });
+
+        filterAndRender();
+    }
 
     function handleSubjectChange() {
         const subjectVal = document.getElementById('filter-subject').value;
@@ -107,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function handleTypeChange() { filterAndRender(); }
     function handleSearch() { filterAndRender(); }
 
-    // 4. Reset Function (From filters.js)
+    // 5. Reset Function
     function resetFilters() {
         document.getElementById('filter-semester').value = 'all';
         
@@ -126,38 +154,48 @@ document.addEventListener('DOMContentLoaded', () => {
         renderResources(allResources);
     }
 
-    // 5. Master Filter Function
+    // 6. Master Filter Function
     function filterAndRender() {
-    const semesterVal = document.getElementById('filter-semester').value;
-    const subjectVal = document.getElementById('filter-subject').value;
-    const typeVal = document.getElementById('filter-type').value;
-    const searchVal = document.getElementById('search-input').value.toLowerCase();
+        const semesterVal = document.getElementById('filter-semester').value;
+        const subjectVal = document.getElementById('filter-subject').value;
+        const typeVal = document.getElementById('filter-type').value;
+        const searchVal = document.getElementById('search-input').value.toLowerCase();
 
-    const filtered = allResources.filter(item => {
-        const matchSem = (semesterVal === 'all') || (item.semester == semesterVal);
-        const matchSub = (subjectVal === 'all') || (item.subject === subjectVal);
-        const matchType = (typeVal === 'all') || (item.type === typeVal);
-        
-        // FIXED: Proper search in title AND subject
-        let matchSearch = true;
-        if (searchVal) {
-            const titleMatch = item.title.toLowerCase().includes(searchVal);
-            const subjectMatch = item.subject.toLowerCase().includes(searchVal);
-            matchSearch = titleMatch || subjectMatch;
-        }
+        const filtered = allResources.filter(item => {
+            const matchSem = (semesterVal === 'all') || (item.semester == semesterVal);
+            const matchSub = (subjectVal === 'all') || (item.subject === subjectVal);
+            const matchType = (typeVal === 'all') || (item.type === typeVal);
+            
+            let matchSearch = true;
+            if (searchVal) {
+                const titleMatch = item.title.toLowerCase().includes(searchVal);
+                const subjectMatch = item.subject.toLowerCase().includes(searchVal);
+                matchSearch = titleMatch || subjectMatch;
+            }
 
-        return matchSem && matchSub && matchType && matchSearch;
-    });
+            return matchSem && matchSub && matchType && matchSearch;
+        });
 
-    renderResources(filtered);
-}
-    // 6. Render Grid
+        renderResources(filtered);
+    }
+
+    // 7. UPDATED Render Grid Function
     function renderResources(resources) {
         const grid = document.getElementById('resource-grid');
         grid.innerHTML = ''; 
 
         if (resources.length === 0) {
-            grid.innerHTML = '<div class="no-results">No resources found matching your criteria.</div>';
+            grid.innerHTML = `
+                <div class="no-results">
+                    <div class="no-results-icon">🔍</div>
+                    <h3>No Resources Found</h3>
+                    <p>Try adjusting your filters or search term to find what you're looking for.</p>
+                    <button onclick="resetFilters()" class="filter-btn" style="margin-top: 1.5rem;">
+                        <i class="fas fa-redo"></i> Reset All Filters
+                    </button>
+                </div>
+            `;
+            updateResultsCounter(0, allResources.length);
             return;
         }
 
@@ -167,27 +205,53 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Badge Styling Logic
             let typeBadgeClass = 'badge-default';
-            if (res.type === 'Lecture') typeBadgeClass = 'badge-lecture';
-            else if (res.type === 'TD/Series') typeBadgeClass = 'badge-td';
-            else if (res.type === 'Exam') typeBadgeClass = 'badge-exam';
-            else if (res.type === 'TP') typeBadgeClass = 'badge-tp';
+            let typeIcon = '📄';
+            
+            if (res.type === 'Lecture') {
+                typeBadgeClass = 'badge-lecture';
+                typeIcon = '📚';
+            } else if (res.type === 'TD/Series') {
+                typeBadgeClass = 'badge-td';
+                typeIcon = '✏️';
+            } else if (res.type === 'Exam') {
+                typeBadgeClass = 'badge-exam';
+                typeIcon = '📝';
+            } else if (res.type === 'TP') {
+                typeBadgeClass = 'badge-tp';
+                typeIcon = '💻';
+            }
 
             card.innerHTML = `
                 <div class="resource-header">
-                    <div class="resource-badge semester-${res.semester}">Sem ${res.semester}</div>
-                    ${res.type ? `<div class="resource-badge ${typeBadgeClass}">${res.type}</div>` : ''}
+                    <div class="resource-badge semester-${res.semester}">
+                        <i class="fas fa-graduation-cap"></i> Sem ${res.semester}
+                    </div>
+                    ${res.type ? `
+                    <div class="resource-badge ${typeBadgeClass}">
+                        ${typeIcon} ${res.type}
+                    </div>` : ''}
                 </div>
+                
                 <h3 class="resource-title">${res.title}</h3>
+                
                 <div class="resource-meta">
                     <span class="resource-meta-item">
-                        📘 ${res.subject}
+                        <i class="fas fa-book"></i> ${res.subject}
                     </span>
                 </div>
-                <a href="${res.drive_link || '#'}" class="resource-link" target="_blank">
-                    ${res.drive_link ? '📂 View Resource' : '🔒 Coming Soon'}
+                
+                <a href="${res.drive_link || '#'}" 
+                   class="resource-link" 
+                   ${res.drive_link ? 'target="_blank"' : ''}
+                   ${!res.drive_link ? 'style="opacity: 0.7; cursor: not-allowed;"' : ''}>
+                    ${res.drive_link ? 
+                        '<i class="fas fa-external-link-alt"></i> View Resource' : 
+                        '<i class="fas fa-lock"></i> Coming Soon'}
                 </a>
             `;
             grid.appendChild(card);
         });
+        
+        updateResultsCounter(resources.length, allResources.length);
     }
 });

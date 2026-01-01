@@ -4,102 +4,164 @@
 <meta charset="UTF-8">
 <title>AMAIDS Hub - Home</title>
 <link rel="stylesheet" href="style/main.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 <header>
     <div class="header-container">
         <div class="logo-container">
             <div class="logo-icon">AI</div>
-            <div>
+            <div class="logo-text">
                 <h1>AMAIDS Hub</h1>
                 <div class="subtitle">Applied Mathematics for AI & Data Science</div>
             </div>
         </div>
+        
         <nav>
-            <a href="index.html" class="active">Home</a>
-            <a href="contributions.html">Contribute</a>
-            <a href="about.html">About Major</a>
-            <a href="contact.html">Contact Us</a>
+            <a href="index.html" class="active"><i class="fas fa-home"></i> Home</a>
+            <a href="contributions.html"><i class="fas fa-share-square"></i> Contribute</a>
+            <a href="about.html"><i class="fas fa-info-circle"></i> About Major</a>
+            <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
         </nav>
     </div>
 </header>
 
-<main>
-    <section id="intro">
-        <h2>Welcome to the Resource Hub</h2>
-        <p>This platform provides educational resources for the <strong>Applied Mathematics for Artificial Intelligence and Data Science</strong> program at University of Kasdi Merbah Ouargla. Browse resources by semester, subject, or type.</p>
-    </section>
-    
-  <section id="filters" class="card">
-    <h3>Filter Resources</h3>
-    <div class="filter-group">
-        <div>
-            <label class="filter-label">Semester</label>
-            <select id="filter-semester" class="filter-control">
-                <option value="all">Select Semester...</option>
-            </select>
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="hero-content">
+        <h1 class="hero-title">Your Gateway to Academic Excellence</h1>
+        <p class="hero-description">
+            Discover comprehensive educational resources for the Applied Mathematics & AI for Data Science program. 
+            Access lectures, exercises, exams, and projects curated for your academic success.
+        </p>
+        
+        <div class="hero-stats">
+            <div class="stat-item">
+                <span class="stat-number" id="semester-count">6</span>
+                <span class="stat-label">Semesters</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" id="subject-count">40+</span>
+                <span class="stat-label">Subjects</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" id="resource-count">200+</span>
+                <span class="stat-label">Resources</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" id="type-count">4</span>
+                <span class="stat-label">Resource Types</span>
+            </div>
         </div>
-
-        <div>
-            <label class="filter-label">Subject</label>
-            <select id="filter-subject" class="filter-control" disabled>
-                <option value="all">All Subjects</option>
-            </select>
-        </div>
-
-        <div>
-            <label class="filter-label">Type</label>
-            <select id="filter-type" class="filter-control" disabled>
-                <option value="all">All Types</option>
-            </select>
-        </div>
-
-        <div style="display: flex; align-items: flex-end;">
-            <button id="reset-filters" class="filter-btn" style="height: 42px; margin-top: 24px;">Reset Filters</button>
-        </div>
-
     </div>
-
-    <!-- In index.html, inside the filters section -->
-<div class="search-container">
-    <div class="search-icon">🔍</div>
-    <input type="text" id="search-input" class="filter-control" placeholder="Search resources...">
-</div>
-
 </section>
 
-    <div class="resource-grid" id="resource-grid">
-        <div class="loading-message">Loading resources...</div>
-    </div>
+<main>
+    <!-- Filters Section -->
+    <section id="filters" class="card">
+        <div class="filters-header">
+            <h2><i class="fas fa-filter"></i> Filter Resources</h2>
+            <div class="results-counter" id="results-counter">
+                <i class="fas fa-file-alt"></i>
+                <span>Loading resources...</span>
+            </div>
+        </div>
+        
+        <div class="filter-group">
+            <div class="filter-wrapper">
+                <label class="filter-label">
+                    <i class="fas fa-graduation-cap"></i> Semester
+                </label>
+                <select id="filter-semester" class="filter-control">
+                    <option value="all">All Semesters</option>
+                </select>
+            </div>
+
+            <div class="filter-wrapper">
+                <label class="filter-label">
+                    <i class="fas fa-book"></i> Subject
+                </label>
+                <select id="filter-subject" class="filter-control" disabled>
+                    <option value="all">All Subjects</option>
+                </select>
+            </div>
+
+            <div class="filter-wrapper">
+                <label class="filter-label">
+                    <i class="fas fa-file"></i> Type
+                </label>
+                <select id="filter-type" class="filter-control" disabled>
+                    <option value="all">All Types</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="filter-group">
+            <div class="search-container">
+                <div class="search-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+                <input type="text" id="search-input" class="filter-control" placeholder="Search by title or subject...">
+            </div>
+
+            <button id="reset-filters" class="filter-btn">
+                <i class="fas fa-redo"></i> Reset Filters
+            </button>
+        </div>
+    </section>
+
+    <!-- Resources Grid -->
+    <section id="resources">
+        <div class="resource-grid" id="resource-grid">
+            <div class="loading-card">
+                <div class="loading-spinner"></div>
+                <p>Loading resources...</p>
+            </div>
+        </div>
+    </section>
 </main>
 
 <footer>
     <div class="footer-container">
         <div class="footer-section">
             <h4>AMAIDS Hub</h4>
-            <p>Resource platform for Applied Mathematics & AI for Data Science program.</p>
-            <p>University of Kasdi Merbah Ouargla</p>
+            <p>Comprehensive resource platform for the Applied Mathematics & AI for Data Science program at University of Kasdi Merbah Ouargla.</p>
+            <p><i class="fas fa-map-marker-alt"></i> Faculty of Mathematics and Matter Sciences</p>
         </div>
+        
         <div class="footer-section">
             <h4>Quick Links</h4>
-            <a href="index.html">Home</a>
-            <a href="contributions.html">Contribute</a>
-            <a href="about.html">About Major</a>
-            <a href="contact.html">Contact Us</a>
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="contributions.html"><i class="fas fa-share-square"></i> Contribute</a>
+            <a href="about.html"><i class="fas fa-info-circle"></i> About Major</a>
+            <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
         </div>
+        
         <div class="footer-section">
-            <h4>Contact</h4>
-            <p>Faculty of Mathematics and Matter Sciences</p>
-            <p>University of Kasdi Merbah Ouargla</p>
-            <p>Ouargla, Algeria</p>
+            <h4>Connect With Us</h4>
+            <a href="mailto:khaldiislam720@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+            <a href="https://t.me/Khi_slam" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-telegram"></i> Telegram
+            </a>
+            <a href="https://github.com/khi-slam" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+        </div>
+        
+        <div class="footer-section">
+            <h4>Program Info</h4>
+            <p><i class="fas fa-university"></i> University of Kasdi Merbah Ouargla</p>
+            <p><i class="fas fa-calendar-alt"></i> Academic Year 2025-2026</p>
+            <p><i class="fas fa-credit-card"></i> 180 Credits Total</p>
         </div>
     </div>
+    
     <div class="footer-bottom">
-        <p>&copy; 2025 AMAIDS Hub. All rights reserved.</p>
+        <p>&copy; 2025 AMAIDS Hub. All rights reserved. | Designed with ❤️ for students</p>
     </div>
 </footer>
 
 <script src="script/datahandling.js"></script>
-
 </body>
 </html>
