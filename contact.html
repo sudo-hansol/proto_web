@@ -4,117 +4,402 @@
 <meta charset="UTF-8">
 <title>AMAIDS Hub - Contact</title>
 <link rel="stylesheet" href="style/main.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 <header>
     <div class="header-container">
         <div class="logo-container">
             <div class="logo-icon">AI</div>
-            <div>
+            <div class="logo-text">
                 <h1>AMAIDS Hub</h1>
                 <div class="subtitle">Applied Mathematics for AI & Data Science</div>
             </div>
         </div>
+        
         <nav>
-            <a href="index.html">Home</a>
-            <a href="contributions.html">Contribute</a>
-            <a href="about.html">About Major</a>
-            <a href="contact.html" class="active">Contact</a>
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="contributions.html"><i class="fas fa-share-square"></i> Contribute</a>
+            <a href="about.html"><i class="fas fa-info-circle"></i> About Major</a>
+            <a href="contact.html" class="active"><i class="fas fa-envelope"></i> Contact</a>
         </nav>
     </div>
 </header>
 
-<main>
-    <section class="hero">
-        <h2>Contact & Support</h2>
-        <p>Get in touch for questions, feedback, or collaboration opportunities</p>
-    </section>
-
-    <section id="contact-info" class="card">
-        <h2>Contact Information</h2>
-        <p>Feel free to reach out through any of the following channels:</p>
+<!-- Hero Section for Contact -->
+<section class="hero-section" style="background: linear-gradient(135deg, #0ea5e9, #0284c7);">
+    <div class="hero-content">
+        <h1 class="hero-title">Get in Touch</h1>
+        <p class="hero-description">
+            Have questions, feedback, or suggestions? We'd love to hear from you. 
+            Reach out through any channel below - we're here to help!
+        </p>
         
-        <div class="contact-grid">
-            <div class="contact-card">
-                <div class="contact-icon">📧</div>
+        <div class="hero-stats">
+            <div class="stat-item">
+                <span class="stat-number"><i class="fas fa-clock"></i></span>
+                <span class="stat-label">24-48h Response</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number"><i class="fas fa-headset"></i></span>
+                <span class="stat-label">Multiple Channels</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number"><i class="fas fa-comments"></i></span>
+                <span class="stat-label">Quick Support</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number"><i class="fas fa-handshake"></i></span>
+                <span class="stat-label">Collaboration Ready</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<main>
+    <!-- Contact Channels -->
+    <section class="card contact-channels-section">
+        <div class="section-header">
+            <h2><i class="fas fa-comment-dots"></i> Contact Channels</h2>
+            <p class="section-subtitle">Choose your preferred way to get in touch with us</p>
+        </div>
+        
+        <div class="channels-grid">
+            <!-- Email Card -->
+            <div class="channel-card">
+                <div class="channel-icon" style="background: linear-gradient(135deg, #ef4444, #dc2626);">
+                    <i class="fas fa-envelope"></i>
+                </div>
                 <h3>Email</h3>
-                <p>Primary contact for program inquiries and resource submissions</p>
-                <a href="mailto:khaldiislam@gmail.com" class="contact-link">
-                    khaldiislam@gmail.com
+                <p class="channel-description">Best for detailed inquiries, resource submissions, and formal communications.</p>
+                
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="fas fa-user-circle"></i>
+                        <div>
+                            <strong>Islam Khaldi</strong>
+                            <span>Platform Creator</span>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-envelope-open-text"></i>
+                        <div>
+                            <a href="mailto:khaldiislam@gmail.com" class="contact-link">
+                                khaldiislam@gmail.com
+                            </a>
+                            <span>Primary Contact</span>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-envelope-open-text"></i>
+                        <div>
+                            <a href="mailto:khaldiislam720@gmail.com" class="contact-link">
+                                khaldiislam720@gmail.com
+                            </a>
+                            <span>Alternative Contact</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="response-info">
+                    <i class="fas fa-clock"></i>
+                    <span>Response time: 24-48 hours</span>
+                </div>
+                
+                <a href="mailto:khaldiislam@gmail.com" class="channel-action-btn">
+                    <i class="fas fa-paper-plane"></i> Send Email
                 </a>
-                <p class="contact-note">Response time: 24-48 hours</p>
             </div>
             
-            <div class="contact-card">
-                <div class="contact-icon">📱</div>
+            <!-- Telegram Card -->
+            <div class="channel-card">
+                <div class="channel-icon" style="background: linear-gradient(135deg, #26a5e4, #0088cc);">
+                    <i class="fab fa-telegram"></i>
+                </div>
                 <h3>Telegram</h3>
-                <p>Quick questions and community discussions</p>
-                <a href="https://t.me/Khi_slam" target="_blank" class="contact-link" rel="noopener noreferrer">
-                    @Khi_slam
+                <p class="channel-description">Perfect for quick questions, community discussions, and instant updates.</p>
+                
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="fas fa-user-circle"></i>
+                        <div>
+                            <strong>@Khi_slam</strong>
+                            <span>Direct Message</span>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-users"></i>
+                        <div>
+                            <span>Community Group</span>
+                            <small>Join for discussions</small>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-bolt"></i>
+                        <div>
+                            <span>Quick Response</span>
+                            <small>Usually within hours</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="response-info">
+                    <i class="fas fa-clock"></i>
+                    <span>Response time: Within a few hours</span>
+                </div>
+                
+                <a href="https://t.me/Khi_slam" target="_blank" rel="noopener noreferrer" class="channel-action-btn">
+                    <i class="fab fa-telegram"></i> Message on Telegram
                 </a>
-                <p class="contact-note">Usually respond within a few hours</p>
             </div>
             
-            <div class="contact-card">
-                <div class="contact-icon">💻</div>
+            <!-- GitHub Card -->
+            <div class="channel-card">
+                <div class="channel-icon" style="background: linear-gradient(135deg, #333, #24292e);">
+                    <i class="fab fa-github"></i>
+                </div>
                 <h3>GitHub</h3>
-                <p>Technical issues and code-related discussions</p>
-                <a href="https://github.com/khi-slam" target="_blank" class="contact-link" rel="noopener noreferrer">
-                    github.com/khi-slam
+                <p class="channel-description">Ideal for technical issues, feature requests, and code-related discussions.</p>
+                
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="fas fa-code-branch"></i>
+                        <div>
+                            <strong>khi-slam</strong>
+                            <span>Repository Owner</span>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <div>
+                            <span>Issue Tracker</span>
+                            <small>Report bugs & features</small>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-code-pull-request"></i>
+                        <div>
+                            <span>Pull Requests</span>
+                            <small>Contribute to the project</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="response-info">
+                    <i class="fas fa-clock"></i>
+                    <span>Active development</span>
+                </div>
+                
+                <a href="https://github.com/khi-slam" target="_blank" rel="noopener noreferrer" class="channel-action-btn">
+                    <i class="fab fa-github"></i> Visit GitHub
                 </a>
-                <p class="contact-note">Open for issues and pull requests</p>
             </div>
         </div>
     </section>
 
-    <section class="card">
-        <h2>When to Contact</h2>
-        <div class="when-to-contact">
-            <div class="contact-reason">
-                <h4>📚 Resource Issues</h4>
-                <p>Broken links, incorrect content, or submission problems</p>
+    <!-- When to Contact -->
+    <section class="card contact-reasons-section">
+        <div class="section-header">
+            <h2><i class="fas fa-question-circle"></i> When to Contact Us</h2>
+            <p class="section-subtitle">Here's how we can help you with different types of inquiries</p>
+        </div>
+        
+        <div class="reasons-grid">
+            <div class="reason-card">
+                <div class="reason-icon" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <h3>Resource Issues</h3>
+                <ul>
+                    <li>Broken or incorrect links</li>
+                    <li>Inaccurate resource content</li>
+                    <li>Submission problems</li>
+                    <li>Access issues</li>
+                </ul>
             </div>
-            <div class="contact-reason">
-                <h4>🤝 Collaboration</h4>
-                <p>Suggestions for new features or partnership opportunities</p>
+            
+            <div class="reason-card">
+                <div class="reason-icon" style="background: linear-gradient(135deg, #10b981, #059669);">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <h3>Feedback & Suggestions</h3>
+                <ul>
+                    <li>Platform improvements</li>
+                    <li>New feature ideas</li>
+                    <li>User experience feedback</li>
+                    <li>Content suggestions</li>
+                </ul>
             </div>
-            <div class="contact-reason">
-                <h4>💡 Feedback</h4>
-                <p>Suggestions to improve the platform or curriculum resources</p>
+            
+            <div class="reason-card">
+                <div class="reason-icon" style="background: linear-gradient(135deg, #f59e0b, #d97706);">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                <h3>Collaboration</h3>
+                <ul>
+                    <li>Partnership opportunities</li>
+                    <li>Content collaboration</li>
+                    <li>Research projects</li>
+                    <li>Academic partnerships</li>
+                </ul>
             </div>
-            <div class="contact-reason">
-                <h4>❓ Questions</h4>
-                <p>Clarifications about the program or specific resources</p>
+            
+            <div class="reason-card">
+                <div class="reason-icon" style="background: linear-gradient(135deg, #3b82f6, #1d4ed8);">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h3>Academic Support</h3>
+                <ul>
+                    <li>Program questions</li>
+                    <li>Course clarifications</li>
+                    <li>Study guidance</li>
+                    <li>Academic resources</li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <section id="program-info" class="program-details">
-        <h2>Program Information</h2>
-        <div class="detail-grid">
-            <div class="detail-item">
-                <div class="detail-label">University</div>
-                <div>University of Kasdi Merbah Ouargla</div>
+    <!-- Contact Form -->
+    <section class="card contact-form-section">
+        <div class="section-header">
+            <h2><i class="fas fa-edit"></i> Send us a Message</h2>
+            <p class="section-subtitle">Prefer to use a contact form? Fill out the details below</p>
+        </div>
+        
+        <form id="contact-form" class="enhanced-contact-form">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="contact-name">
+                        <i class="fas fa-user"></i> Your Name
+                    </label>
+                    <input type="text" id="contact-name" placeholder="Enter your full name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="contact-email">
+                        <i class="fas fa-envelope"></i> Email Address
+                    </label>
+                    <input type="email" id="contact-email" placeholder="your.email@example.com" required>
+                </div>
             </div>
-            <div class="detail-item">
-                <div class="detail-label">Faculty</div>
-                <div>Faculty of Mathematics and Matter Sciences</div>
+            
+            <div class="form-group">
+                <label for="contact-subject">
+                    <i class="fas fa-tag"></i> Subject
+                </label>
+                <select id="contact-subject" required>
+                    <option value="">Select a subject</option>
+                    <option value="resource-issue">Resource Issue</option>
+                    <option value="contribution">Contribution Inquiry</option>
+                    <option value="feedback">Feedback/Suggestion</option>
+                    <option value="collaboration">Collaboration</option>
+                    <option value="academic">Academic Question</option>
+                    <option value="technical">Technical Support</option>
+                    <option value="other">Other</option>
+                </select>
             </div>
-            <div class="detail-item">
-                <div class="detail-label">Department</div>
-                <div>Mathematics</div>
+            
+            <div class="form-group">
+                <label for="contact-message">
+                    <i class="fas fa-comment"></i> Your Message
+                </label>
+                <textarea id="contact-message" rows="6" placeholder="Please provide as much detail as possible about your inquiry..." required></textarea>
+                <div class="char-counter">
+                    <span id="char-count">0</span> / 1000 characters
+                </div>
             </div>
-            <div class="detail-item">
-                <div class="detail-label">Program</div>
-                <div>Applied Mathematics for AI & Data Science</div>
+            
+            <div class="form-group">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="contact-consent" required>
+                    <span>I agree to receive a response via email. Your information will only be used to respond to your inquiry.</span>
+                </label>
             </div>
-            <div class="detail-item">
-                <div class="detail-label">Academic Year</div>
-                <div>2025-2026</div>
+            
+            <div class="form-actions">
+                <button type="submit" class="submit-button">
+                    <i class="fas fa-paper-plane"></i> Send Message
+                </button>
+                <button type="reset" class="reset-button">
+                    <i class="fas fa-redo"></i> Clear Form
+                </button>
             </div>
-            <div class="detail-item">
-                <div class="detail-label">Credits</div>
-                <div>180 (30 per semester)</div>
+        </form>
+    </section>
+
+    <!-- University Information -->
+    <section class="card university-info-section">
+        <div class="section-header">
+            <h2><i class="fas fa-university"></i> University Information</h2>
+        </div>
+        
+        <div class="university-details">
+            <div class="university-card">
+                <div class="university-icon">
+                    <i class="fas fa-landmark"></i>
+                </div>
+                <div class="university-content">
+                    <h3>University</h3>
+                    <p>University of Kasdi Merbah Ouargla</p>
+                </div>
+            </div>
+            
+            <div class="university-card">
+                <div class="university-icon">
+                    <i class="fas fa-school"></i>
+                </div>
+                <div class="university-content">
+                    <h3>Faculty</h3>
+                    <p>Faculty of Mathematics and Matter Sciences</p>
+                </div>
+            </div>
+            
+            <div class="university-card">
+                <div class="university-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="university-content">
+                    <h3>Location</h3>
+                    <p>Ouargla, Algeria</p>
+                </div>
+            </div>
+            
+            <div class="university-card">
+                <div class="university-icon">
+                    <i class="fas fa-calendar-alt"></i>
+                </div>
+                <div class="university-content">
+                    <h3>Academic Year</h3>
+                    <p>2025-2026</p>
+                </div>
+            </div>
+            
+            <div class="university-card">
+                <div class="university-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div class="university-content">
+                    <h3>Program</h3>
+                    <p>Applied Mathematics for AI & Data Science</p>
+                </div>
+            </div>
+            
+            <div class="university-card">
+                <div class="university-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <div class="university-content">
+                    <h3>Response Time</h3>
+                    <p>24-48 hours (Email)</p>
+                    <p>Few hours (Telegram)</p>
+                </div>
             </div>
         </div>
     </section>
@@ -124,49 +409,184 @@
     <div class="footer-container">
         <div class="footer-section">
             <h4>AMAIDS Hub</h4>
-            <p>Resource platform for Applied Mathematics & AI for Data Science program.</p>
-            <p>University of Kasdi Merbah Ouargla</p>
+            <p>Your comprehensive resource platform for Applied Mathematics & AI for Data Science.</p>
+            <p><i class="fas fa-heart"></i> Supporting students since 2025</p>
         </div>
+        
+        <div class="footer-section">
+            <h4>Contact Channels</h4>
+            <a href="mailto:khaldiislam@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+            <a href="https://t.me/Khi_slam" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-telegram"></i> Telegram
+            </a>
+            <a href="https://github.com/khi-slam" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+        </div>
+        
         <div class="footer-section">
             <h4>Quick Links</h4>
-            <a href="index.html">Home</a>
-            <a href="contributions.html">Contribute</a>
-            <a href="about.html">About Major</a>
-            <a href="contact.html">Contact</a>
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="contributions.html"><i class="fas fa-share-square"></i> Contribute</a>
+            <a href="about.html"><i class="fas fa-info-circle"></i> About Major</a>
+            <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
         </div>
+        
         <div class="footer-section">
-            <h4>Connect</h4>
-            <a href="mailto:khaldiislam720@gmail.com">📧 Email</a>
-            <a href="https://t.me/Khi_slam" target="_blank" rel="noopener noreferrer">📱 Telegram</a>
-            <a href="https://github.com/khi-slam" target="_blank" rel="noopener noreferrer">💻 GitHub</a>
+            <h4>Support Hours</h4>
+            <p><i class="fas fa-clock"></i> Mon - Fri: 9AM - 5PM</p>
+            <p><i class="fas fa-calendar"></i> Response: 24-48h</p>
+            <p><i class="fas fa-bolt"></i> Telegram: Quick</p>
         </div>
     </div>
+    
     <div class="footer-bottom">
-        <p>&copy; 2025 AMAIDS Hub. All rights reserved.</p>
+        <p>&copy; 2025 AMAIDS Hub. All rights reserved. | Created with ❤️ by Islam Khaldi</p>
     </div>
 </footer>
 
 <script>
-// Add copy to clipboard functionality for email
 document.addEventListener('DOMContentLoaded', () => {
-    const emailLink = document.querySelector('a[href^="mailto:"]');
-    if (emailLink) {
-        emailLink.addEventListener('click', (e) => {
-            if (window.innerWidth <= 768) {
-                e.preventDefault();
-                const email = emailLink.getAttribute('href').replace('mailto:', '');
-                navigator.clipboard.writeText(email).then(() => {
-                    alert('Email address copied to clipboard!');
-                });
+    // Character counter for message textarea
+    const messageTextarea = document.getElementById('contact-message');
+    const charCount = document.getElementById('char-count');
+    
+    if (messageTextarea && charCount) {
+        messageTextarea.addEventListener('input', () => {
+            const count = messageTextarea.value.length;
+            charCount.textContent = count;
+            
+            if (count > 1000) {
+                charCount.style.color = '#ef4444';
+                messageTextarea.style.borderColor = '#ef4444';
+            } else if (count > 800) {
+                charCount.style.color = '#f59e0b';
+                messageTextarea.style.borderColor = '#f59e0b';
+            } else {
+                charCount.style.color = 'var(--text-light)';
+                messageTextarea.style.borderColor = 'var(--border-color)';
             }
         });
     }
     
-    // Add click tracking for external links
+    // Contact form submission
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const name = document.getElementById('contact-name').value;
+            const email = document.getElementById('contact-email').value;
+            const subject = document.getElementById('contact-subject').value;
+            const message = document.getElementById('contact-message').value;
+            const consent = document.getElementById('contact-consent').checked;
+            
+            // Basic validation
+            if (!name || !email || !subject || !message || !consent) {
+                showNotification('Please fill all required fields and agree to the terms.', 'error');
+                return;
+            }
+            
+            if (message.length > 1000) {
+                showNotification('Message exceeds 1000 characters. Please shorten your message.', 'error');
+                return;
+            }
+            
+            // In a real application, you would send this data to a server
+            // For now, we'll simulate a successful submission
+            
+            // Show success message
+            showNotification('Thank you! Your message has been sent successfully. We\'ll respond within 24-48 hours.', 'success');
+            
+            // Reset form
+            contactForm.reset();
+            charCount.textContent = '0';
+            charCount.style.color = 'var(--text-light)';
+            messageTextarea.style.borderColor = 'var(--border-color)';
+            
+            // Log the submission (for debugging)
+            console.log('Contact form submitted:', {
+                name,
+                email,
+                subject,
+                messageLength: message.length,
+                timestamp: new Date().toISOString()
+            });
+        });
+    }
+    
+    // Copy email to clipboard functionality
+    document.querySelectorAll('.contact-link').forEach(link => {
+        link.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                const email = link.getAttribute('href').replace('mailto:', '');
+                
+                navigator.clipboard.writeText(email).then(() => {
+                    showNotification('Email address copied to clipboard!', 'success');
+                }).catch(err => {
+                    console.error('Failed to copy: ', err);
+                    showNotification('Failed to copy email. Please try again.', 'error');
+                });
+            }
+        });
+    });
+    
+    // Notification function
+    function showNotification(message, type = 'info') {
+        // Remove any existing notifications
+        document.querySelectorAll('.notification').forEach(n => n.remove());
+        
+        const notification = document.createElement('div');
+        notification.className = `notification ${type}`;
+        notification.innerHTML = `
+            <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}"></i>
+            <span>${message}</span>
+            <button class="close-notification"><i class="fas fa-times"></i></button>
+        `;
+        
+        document.body.appendChild(notification);
+        
+        // Show notification with animation
+        setTimeout(() => notification.classList.add('show'), 10);
+        
+        // Auto-remove after 5 seconds
+        const autoRemove = setTimeout(() => {
+            notification.classList.remove('show');
+            setTimeout(() => notification.remove(), 300);
+        }, 5000);
+        
+        // Close button functionality
+        const closeBtn = notification.querySelector('.close-notification');
+        closeBtn.addEventListener('click', () => {
+            clearTimeout(autoRemove);
+            notification.classList.remove('show');
+            setTimeout(() => notification.remove(), 300);
+        });
+    }
+    
+    // Track external link clicks
     document.querySelectorAll('a[target="_blank"]').forEach(link => {
         link.addEventListener('click', () => {
-            // You could add analytics here
             console.log(`Opening external link: ${link.href}`);
+            // You could add analytics tracking here
+        });
+    });
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if(targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if(targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 100,
+                    behavior: 'smooth'
+                });
+            }
         });
     });
 });
@@ -174,117 +594,551 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <style>
 /* Additional styles for contact page */
-.contact-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    margin: 2rem 0;
+.contact-channels-section {
+    margin-bottom: 3rem;
 }
 
-.contact-card {
-    background: var(--white);
-    border-radius: var(--radius-lg);
-    padding: 1.5rem;
-    text-align: center;
-    border: 2px solid var(--light-blue);
+.channels-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.channel-card {
+    background: white;
+    border-radius: var(--radius);
+    padding: 2rem;
+    border: 1px solid var(--border-color);
     transition: var(--transition);
     display: flex;
     flex-direction: column;
-    align-items: center;
+    position: relative;
+    overflow: hidden;
 }
 
-.contact-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--accent-blue);
+.channel-card:hover {
+    transform: translateY(-8px);
     box-shadow: var(--shadow-lg);
 }
 
-.contact-icon {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    background: var(--light-blue);
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
+.channel-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: inherit;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.channel-card:hover::before {
+    opacity: 1;
+}
+
+.channel-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: var(--radius);
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 1.5rem;
+    color: white;
+    font-size: 2.2rem;
 }
 
-.contact-card h3 {
-    color: var(--primary-blue);
-    margin: 0.5rem 0;
+.channel-card h3 {
+    color: var(--text-main);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
 }
 
-.contact-card p {
-    color: var(--medium-gray);
-    margin: 0.5rem 0;
+.channel-description {
+    color: var(--text-light);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    flex: 1;
+}
+
+.contact-details {
+    background: #f8fafc;
+    border-radius: var(--radius-sm);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--border-color);
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.contact-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.contact-item i {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    width: 24px;
+    text-align: center;
+}
+
+.contact-item div {
+    flex: 1;
+}
+
+.contact-item strong {
+    display: block;
+    color: var(--text-main);
+    margin-bottom: 2px;
+}
+
+.contact-item span {
+    display: block;
+    color: var(--text-light);
     font-size: 0.9rem;
 }
 
+.contact-item small {
+    color: var(--text-light);
+    opacity: 0.8;
+    font-size: 0.85rem;
+}
+
 .contact-link {
-    display: inline-block;
-    margin: 1rem 0;
-    padding: 0.75rem 1.5rem;
-    background: linear-gradient(135deg, var(--accent-blue) 0%, var(--secondary-blue) 100%);
-    color: white;
+    color: var(--primary-color);
     text-decoration: none;
-    border-radius: var(--radius-md);
-    font-weight: 600;
+    font-weight: 500;
     transition: var(--transition);
 }
 
 .contact-link:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+    color: var(--primary-dark);
+    text-decoration: underline;
 }
 
-.contact-note {
-    font-size: 0.8rem;
-    color: var(--medium-gray);
-    font-style: italic;
-    margin-top: 0.5rem;
-}
-
-.when-to-contact {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-    margin-top: 1.5rem;
-}
-
-.contact-reason {
-    padding: 1rem;
-    background: var(--light-gray);
-    border-radius: var(--radius-md);
-    border-left: 4px solid var(--accent-blue);
-}
-
-.contact-reason h4 {
-    color: var(--primary-blue);
-    margin-bottom: 0.5rem;
-}
-
-.contact-reason p {
-    color: var(--medium-gray);
+.response-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-light);
     font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    padding: 0.75rem 1rem;
+    background: #f1f5f9;
+    border-radius: var(--radius-sm);
+}
+
+.response-info i {
+    color: var(--accent-color);
+}
+
+.channel-action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.channel-action-btn:hover {
+    background: linear-gradient(135deg, var(--primary-dark), #1e3a8a);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+/* Contact Reasons Section */
+.reasons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.reason-card {
+    background: white;
+    border-radius: var(--radius);
+    padding: 2rem;
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.reason-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+.reason-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.reason-card h3 {
+    color: var(--text-main);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.reason-card ul {
+    list-style: none;
+    padding: 0;
     margin: 0;
 }
 
+.reason-card li {
+    color: var(--text-light);
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.reason-card li:last-child {
+    border-bottom: none;
+}
+
+.reason-card li::before {
+    content: '✓';
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Contact Form */
+.enhanced-contact-form {
+    margin-top: 2rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    color: var(--text-main);
+    font-size: 0.95rem;
+}
+
+.form-group label i {
+    color: var(--primary-color);
+    width: 20px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    font-size: 1rem;
+    font-family: inherit;
+    transition: var(--transition);
+    background: white;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.form-group select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2364748b'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1.5rem;
+    padding-right: 3rem;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.char-counter {
+    text-align: right;
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-top: 0.5rem;
+}
+
+.char-counter span {
+    font-weight: 600;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: auto;
+    margin-top: 0.25rem;
+}
+
+.checkbox-label span {
+    color: var(--text-light);
+    line-height: 1.5;
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.submit-button {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    border: none;
+    padding: 1rem 2.5rem;
+    border-radius: var(--radius-sm);
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.submit-button:hover {
+    background: linear-gradient(135deg, #059669, #047857);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.reset-button {
+    background: linear-gradient(135deg, #64748b, #475569);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: var(--radius-sm);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.reset-button:hover {
+    background: linear-gradient(135deg, #475569, #334155);
+    transform: translateY(-2px);
+}
+
+/* University Information */
+.university-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.university-card {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: #f8fafc;
+    border-radius: var(--radius);
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.university-card:hover {
+    background: #f1f5f9;
+    transform: translateX(5px);
+}
+
+.university-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.university-content h3 {
+    color: var(--text-main);
+    margin-bottom: 0.25rem;
+    font-size: 1.1rem;
+}
+
+.university-content p {
+    color: var(--text-light);
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Notifications */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: white;
+    padding: 1rem 1.5rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    z-index: 1000;
+    transform: translateX(150%);
+    transition: transform 0.3s ease;
+    min-width: 300px;
+    max-width: 400px;
+}
+
+.notification.show {
+    transform: translateX(0);
+}
+
+.notification.success {
+    border-left: 4px solid #10b981;
+}
+
+.notification.error {
+    border-left: 4px solid #ef4444;
+}
+
+.notification i {
+    font-size: 1.5rem;
+}
+
+.notification.success i {
+    color: #10b981;
+}
+
+.notification.error i {
+    color: #ef4444;
+}
+
+.notification span {
+    flex: 1;
+    color: var(--text-main);
+}
+
+.close-notification {
+    background: none;
+    border: none;
+    color: var(--text-light);
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0.25rem;
+    border-radius: 4px;
+    transition: var(--transition);
+}
+
+.close-notification:hover {
+    color: var(--text-main);
+    background: #f1f5f9;
+}
+
 /* Responsive adjustments */
-@media screen and (max-width: 768px) {
-    .contact-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .when-to-contact {
-        grid-template-columns: 1fr;
+@media (max-width: 992px) {
+    .channels-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
 }
 
-@media screen and (max-width: 480px) {
-    .contact-card {
-        padding: 1rem;
+@media (max-width: 768px) {
+    .channels-grid,
+    .reasons-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .submit-button,
+    .reset-button {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .university-details {
+        grid-template-columns: 1fr;
+    }
+    
+    .notification {
+        left: 20px;
+        right: 20px;
+        max-width: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .channel-card,
+    .reason-card,
+    .university-card {
+        padding: 1.5rem;
+    }
+    
+    .contact-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .contact-item i {
+        align-self: flex-start;
     }
 }
 </style>
