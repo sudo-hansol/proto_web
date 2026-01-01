@@ -29,29 +29,42 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 2. UPDATE THE FETCH SECTION
-    fetch('resources.json')
-        .then(response => response.json())
-        .then(data => {
-            // Filter out resources without drive_link BEFORE storing
-            allResources = data.resources.filter(resource => 
-                resource.drive_link && 
-                resource.drive_link.trim() !== '' && 
-                resource.drive_link !== '#'
-            );
-            
-            // Update the data object to only include resources with links
-            const filteredData = {
-                semesters: data.semesters,
-                resources: allResources
-            };
-            
-            initializeFilters(filteredData);
-            updateHeroStats(filteredData);
-            renderResources(allResources); 
-            updateResultsCounter(allResources.length, allResources.length);
-        })
-        .catch(err => console.error('Error loading resources:', err));
+    // Replace the fetch('resources.json') section with:
+const API_URL = 'https://script.google.com/macros/s/AKfycbwNzSLhDdYZNiRhocNUtEj5q2ZEuckhuUCaT-vpE-KWrAM_eCxsP81DpCfqu1nd6RLV/exec'; // Paste your URL here
 
+fetch(`${API_URL}?action=get_resources`)
+    .then(response => response.json())
+    .then(data => {
+        allResources = data.resources;
+        
+        // Get semesters
+        return fetch(`${API_URL}?action=get_semesters`);
+    })
+    .then(response => response.json())
+    .then(semesterData => {
+        const data = {
+            semesters: semesterData.semesters,
+            resources: allResources
+        };
+        
+        initializeFilters(data);
+        updateHeroStats(data);
+        renderResources(allResources);
+        updateResultsCounter(allResources.length, allResources.length);
+    })
+    .catch(err => {
+        console.error('Error loading from API, falling back to local:', err);
+        // Fallback to local JSON
+        fetch('resources.json')
+            .then(response => response.json())
+            .then(data => {
+                allResources = data.resources;
+                initializeFilters(data);
+                updateHeroStats(data);
+                renderResources(allResources);
+                updateResultsCounter(allResources.length, allResources.length);
+            });
+    });
     // 3. Initialize Filters & Event Listeners
     function initializeFilters(data) {
         const semesterSelect = document.getElementById('filter-semester');

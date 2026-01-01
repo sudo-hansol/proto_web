@@ -398,43 +398,78 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    // Form submission with email sending
-    const form = document.getElementById('submit-form');
-    if (form) {
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
+// Form submission with Google Sheets API
+const API_URL = 'https://script.google.com/macros/s/AKfycbwNzSLhDdYZNiRhocNUtEj5q2ZEuckhuUCaT-vpE-KWrAM_eCxsP81DpCfqu1nd6RLV/exec'; // ⬅️ PASTE YOUR URL HERE
+
+const form = document.getElementById('submit-form');
+if (form) {
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        // Get form values
+        const title = document.getElementById('submit-title').value;
+        const semester = document.getElementById('submit-semester').value;
+        const subject = document.getElementById('submit-subject').value;
+        const type = document.getElementById('submit-type').value;
+        const link = document.getElementById('submit-link').value;
+        const name = document.getElementById('submit-name').value || '';
+        const email = document.getElementById('submit-email').value || '';
+        const description = document.getElementById('submit-description').value || '';
+        
+        // Validation
+        if (!title || !semester || !subject || !type || !link) {
+            showNotification('Please fill all required fields!', 'error');
+            return;
+        }
+        
+        // Validate Google Drive link format (but don't reject if not Google Drive)
+        // if (!link.includes('drive.google.com')) {
+        //     showNotification('Please provide a valid Google Drive link', 'error');
+        //     return;
+        // }
+        
+        // Show loading state
+        const submitBtn = form.querySelector('.submit-button');
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+        submitBtn.disabled = true;
+        
+        try {
+            // Prepare API parameters
+            const params = new URLSearchParams();
+            params.append('action', 'submit');
+            params.append('title', title);
+            params.append('semester', semester);
+            params.append('subject', subject);
+            params.append('type', type);
+            params.append('drive_link', link);
+            params.append('description', description);
+            params.append('contributor_name', name);
+            params.append('contributor_email', email);
             
-            // Get form values
-            const title = document.getElementById('submit-title').value;
-            const semester = document.getElementById('submit-semester').value;
-            const subject = document.getElementById('submit-subject').value;
-            const type = document.getElementById('submit-type').value;
-            const link = document.getElementById('submit-link').value;
-            const name = document.getElementById('submit-name').value || 'Anonymous';
-            const email = document.getElementById('submit-email').value || 'No email provided';
-            const description = document.getElementById('submit-description').value;
+            // Submit to Google Sheets API
+            const response = await fetch(API_URL, {
+                method: 'POST',
+                body: params
+            });
             
-            // Validation
-            if (!title || !semester || !subject || !type || !link) {
-                showNotification('Please fill all required fields!', 'error');
-                return;
+            const result = await response.json();
+            
+            if (result.success) {
+                showNotification(result.message, 'success');
+                form.reset();
+            } else {
+                showNotification(result.error || 'Submission failed', 'error');
             }
             
-            // Validate Google Drive link
-            if (!link.includes('drive.google.com')) {
-                showNotification('Please provide a valid Google Drive link', 'error');
-                return;
-            }
+        } catch (error) {
+            console.error('Error submitting form:', error);
             
-            // Show loading state
-            const submitBtn = form.querySelector('.submit-button');
-            const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-            submitBtn.disabled = true;
+            // Fallback to email if API fails
+            showNotification('API connection failed. Opening email client instead...', 'warning');
             
-            try {
-                // Prepare email content
-                const emailBody = `
+            // Prepare email content as fallback
+            const emailBody = `
 New Resource Submission - AMAIDS Hub
 ====================================
 
@@ -456,39 +491,22 @@ Description:
 ${description || 'No description provided'}
 
 Submission Time: ${new Date().toLocaleString()}
-                `.trim();
-                
-                // Encode the email body
-                const encodedBody = encodeURIComponent(emailBody);
-                const encodedSubject = encodeURIComponent(`New Resource: ${title} (Sem ${semester})`);
-                
-                // Create mailto link
-                const mailtoLink = `mailto:khaldiislam720@gmail.com?subject=${encodedSubject}&body=${encodedBody}`;
-                
-                // Open default email client
-                window.location.href = mailtoLink;
-                
-                // Show success message
-                showNotification('Opening email client... Please send the email to complete submission.', 'success');
-                
-                // Reset form after a delay
-                setTimeout(() => {
-                    form.reset();
-                    submitBtn.innerHTML = originalText;
-                    submitBtn.disabled = false;
-                    
-                    // Show final success message
-                    showNotification('Thank you! Your resource has been submitted for review.', 'success');
-                }, 2000);
-                
-            } catch (error) {
-                console.error('Error submitting form:', error);
-                showNotification('Error submitting form. Please try again.', 'error');
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-            }
-        });
-    }
+            `.trim();
+            
+            const encodedBody = encodeURIComponent(emailBody);
+            const encodedSubject = encodeURIComponent(`New Resource: ${title} (Sem ${semester})`);
+            const mailtoLink = `mailto:khaldiislam720@gmail.com?subject=${encodedSubject}&body=${encodedBody}`;
+            
+            // Open email client
+            window.location.href = mailtoLink;
+            
+        } finally {
+            // Reset button state
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+        }
+    });
+}
     
     // FAQ toggle functionality
     document.querySelectorAll('.faq-question').forEach(question => {
