@@ -10,22 +10,25 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updateHeroStats(data) {
-        const resources = data.resources;
-        
-        // Count unique subjects
-        const uniqueSubjects = [...new Set(resources.map(r => r.subject))].length;
-        const subjectCountEl = document.getElementById('subject-count');
-        if (subjectCountEl) subjectCountEl.textContent = `${uniqueSubjects}+`;
-        
-        // Count total resources
-        const resourceCountEl = document.getElementById('resource-count');
-        if (resourceCountEl) resourceCountEl.textContent = `${resources.length}+`;
-        
-        // Count unique types
-        const uniqueTypes = [...new Set(resources.map(r => r.type))].length;
-        const typeCountEl = document.getElementById('type-count');
-        if (typeCountEl) typeCountEl.textContent = uniqueTypes;
-    }
+    const resources = data.resources;
+    
+    // Filter only resources with drive_link
+    const resourcesWithLinks = resources.filter(r => r.drive_link && r.drive_link.trim() !== '');
+    
+    // Count unique subjects (only those with links)
+    const uniqueSubjects = [...new Set(resourcesWithLinks.map(r => r.subject))].length;
+    const subjectCountEl = document.getElementById('subject-count');
+    if (subjectCountEl) subjectCountEl.textContent = `${uniqueSubjects}+`;
+    
+    // Count total resources (only those with links)
+    const resourceCountEl = document.getElementById('resource-count');
+    if (resourceCountEl) resourceCountEl.textContent = `${resourcesWithLinks.length}+`;
+    
+    // Count unique types (only those with links)
+    const uniqueTypes = [...new Set(resourcesWithLinks.map(r => r.type))].length;
+    const typeCountEl = document.getElementById('type-count');
+    if (typeCountEl) typeCountEl.textContent = uniqueTypes;
+}
 
     // 2. UPDATE THE FETCH SECTION
     fetch('resources.json')
@@ -155,103 +158,108 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 6. Master Filter Function
-    function filterAndRender() {
-        const semesterVal = document.getElementById('filter-semester').value;
-        const subjectVal = document.getElementById('filter-subject').value;
-        const typeVal = document.getElementById('filter-type').value;
-        const searchVal = document.getElementById('search-input').value.toLowerCase();
+    // 6. Master Filter Function - UPDATED to hide resources without drive_link
+function filterAndRender() {
+    const semesterVal = document.getElementById('filter-semester').value;
+    const subjectVal = document.getElementById('filter-subject').value;
+    const typeVal = document.getElementById('filter-type').value;
+    const searchVal = document.getElementById('search-input').value.toLowerCase();
 
-        const filtered = allResources.filter(item => {
-            const matchSem = (semesterVal === 'all') || (item.semester == semesterVal);
-            const matchSub = (subjectVal === 'all') || (item.subject === subjectVal);
-            const matchType = (typeVal === 'all') || (item.type === typeVal);
-            
-            let matchSearch = true;
-            if (searchVal) {
-                const titleMatch = item.title.toLowerCase().includes(searchVal);
-                const subjectMatch = item.subject.toLowerCase().includes(searchVal);
-                matchSearch = titleMatch || subjectMatch;
-            }
-
-            return matchSem && matchSub && matchType && matchSearch;
-        });
-
-        renderResources(filtered);
-    }
-
-    // 7. UPDATED Render Grid Function
-    function renderResources(resources) {
-        const grid = document.getElementById('resource-grid');
-        grid.innerHTML = ''; 
-
-        if (resources.length === 0) {
-            grid.innerHTML = `
-                <div class="no-results">
-                    <div class="no-results-icon">🔍</div>
-                    <h3>No Resources Found</h3>
-                    <p>Try adjusting your filters or search term to find what you're looking for.</p>
-                    <button onclick="resetFilters()" class="filter-btn" style="margin-top: 1.5rem;">
-                        <i class="fas fa-redo"></i> Reset All Filters
-                    </button>
-                </div>
-            `;
-            updateResultsCounter(0, allResources.length);
-            return;
+    const filtered = allResources.filter(item => {
+        // Skip items without drive_link
+        if (!item.drive_link || item.drive_link === '#' || item.drive_link.trim() === '') {
+            return false;
+        }
+        
+        const matchSem = (semesterVal === 'all') || (item.semester == semesterVal);
+        const matchSub = (subjectVal === 'all') || (item.subject === subjectVal);
+        const matchType = (typeVal === 'all') || (item.type === typeVal);
+        
+        let matchSearch = true;
+        if (searchVal) {
+            const titleMatch = item.title.toLowerCase().includes(searchVal);
+            const subjectMatch = item.subject.toLowerCase().includes(searchVal);
+            matchSearch = titleMatch || subjectMatch;
         }
 
-        resources.forEach(res => {
-            const card = document.createElement('div');
-            card.className = 'resource-card';
-            
-            // Badge Styling Logic
-            let typeBadgeClass = 'badge-default';
-            let typeIcon = '📄';
-            
-            if (res.type === 'Lecture') {
-                typeBadgeClass = 'badge-lecture';
-                typeIcon = '📚';
-            } else if (res.type === 'TD/Series') {
-                typeBadgeClass = 'badge-td';
-                typeIcon = '✏️';
-            } else if (res.type === 'Exam') {
-                typeBadgeClass = 'badge-exam';
-                typeIcon = '📝';
-            } else if (res.type === 'TP') {
-                typeBadgeClass = 'badge-tp';
-                typeIcon = '💻';
-            }
+        return matchSem && matchSub && matchType && matchSearch;
+    });
 
-            card.innerHTML = `
-                <div class="resource-header">
-                    <div class="resource-badge semester-${res.semester}">
-                        <i class="fas fa-graduation-cap"></i> Sem ${res.semester}
-                    </div>
-                    ${res.type ? `
-                    <div class="resource-badge ${typeBadgeClass}">
-                        ${typeIcon} ${res.type}
-                    </div>` : ''}
-                </div>
-                
-                <h3 class="resource-title">${res.title}</h3>
-                
-                <div class="resource-meta">
-                    <span class="resource-meta-item">
-                        <i class="fas fa-book"></i> ${res.subject}
-                    </span>
-                </div>
-                
-                <a href="${res.drive_link || '#'}" 
-                   class="resource-link" 
-                   ${res.drive_link ? 'target="_blank"' : ''}
-                   ${!res.drive_link ? 'style="opacity: 0.7; cursor: not-allowed;"' : ''}>
-                    ${res.drive_link ? 
-                        '<i class="fas fa-external-link-alt"></i> View Resource' : 
-                        '<i class="fas fa-lock"></i> Coming Soon'}
-                </a>
-            `;
-            grid.appendChild(card);
-        });
-        
-        updateResultsCounter(resources.length, allResources.length);
+    renderResources(filtered);
+}
+
+    // 7. UPDATED Render Grid Function
+    // 7. UPDATED Render Grid Function - Only shows resources with drive_link
+function renderResources(resources) {
+    const grid = document.getElementById('resource-grid');
+    grid.innerHTML = ''; 
+
+    if (resources.length === 0) {
+        grid.innerHTML = `
+            <div class="no-results">
+                <div class="no-results-icon">🔍</div>
+                <h3>No Resources Available</h3>
+                <p>No resources with download links are currently available for the selected filters.</p>
+                <button onclick="resetFilters()" class="filter-btn" style="margin-top: 1.5rem;">
+                    <i class="fas fa-redo"></i> Reset All Filters
+                </button>
+            </div>
+        `;
+        updateResultsCounter(0, allResources.length);
+        return;
     }
+
+    resources.forEach(res => {
+        const card = document.createElement('div');
+        card.className = 'resource-card';
+        
+        // Badge Styling Logic
+        let typeBadgeClass = 'badge-default';
+        let typeIcon = '📄';
+        
+        if (res.type === 'Lecture') {
+            typeBadgeClass = 'badge-lecture';
+            typeIcon = '📚';
+        } else if (res.type === 'TD/Series') {
+            typeBadgeClass = 'badge-td';
+            typeIcon = '✏️';
+        } else if (res.type === 'Exam') {
+            typeBadgeClass = 'badge-exam';
+            typeIcon = '📝';
+        } else if (res.type === 'TP') {
+            typeBadgeClass = 'badge-tp';
+            typeIcon = '💻';
+        }
+
+        card.innerHTML = `
+            <div class="resource-header">
+                <div class="resource-badge semester-${res.semester}">
+                    <i class="fas fa-graduation-cap"></i> Sem ${res.semester}
+                </div>
+                ${res.type ? `
+                <div class="resource-badge ${typeBadgeClass}">
+                    ${typeIcon} ${res.type}
+                </div>` : ''}
+            </div>
+            
+            <h3 class="resource-title">${res.title}</h3>
+            
+            <div class="resource-meta">
+                <span class="resource-meta-item">
+                    <i class="fas fa-book"></i> ${res.subject}
+                </span>
+            </div>
+            
+            <a href="${res.drive_link}" 
+               class="resource-link" 
+               target="_blank"
+               rel="noopener noreferrer">
+                <i class="fas fa-external-link-alt"></i> View Resource
+            </a>
+        `;
+        grid.appendChild(card);
+    });
+    
+    updateResultsCounter(resources.length, allResources.length);
+}
 });
